@@ -1,0 +1,149 @@
+/* ==========================================================================
+   Buttons
+   ========================================================================== */
+.btn {
+    display: block;
+    width: 100%;
+    margin: 0;
+    padding: 1.6rem 2rem;
+
+    background: none;
+    border: 1px solid $text-color;
+    -webkit-appearance: none;
+
+    color: $text-color;
+    text-align: center;
+    font-size: 1.4rem;
+    text-decoration: none;
+    vertical-align: middle;
+    line-height: 1;
+
+    cursor: pointer;
+    user-select: none;
+
+    transition: background .3s ease-in-out;
+
+    border-radius: 0;
+
+    &:hover, &:focus, &:active {
+        text-decoration: none;
+        color: $text-color;
+
+        outline: none;
+    }
+
+    &[disabled], fieldset[disabled] & {
+        cursor: not-allowed;
+        pointer-events: none;
+        opacity: .65;
+    }
+
+    & + .btn {
+        margin-top: 1rem;
+    }
+
+    @media (min-width: $screen-sm) {
+        display: inline-block;
+        width: auto;
+
+        font-size: 1.8rem;
+
+        & + .btn {
+            margin: 0 0 0 1rem;
+        }
+    }
+}
+
+/* Mobile nav toggle
+   ========================================================================== */
+.btn--toggle-nav {
+    position: absolute;
+    top: 0;
+    right: 0;
+
+    width: 7rem;
+    height: 7rem;
+    display: inline-block;
+    padding: 0;
+
+    background: $header-bg;
+
+    border: {
+        top: none;
+        right: none;
+        bottom: 1px solid $blue--lightest;
+        left: 1px solid $blue--lightest;
+    }
+
+    color: $blue--lightest;
+
+    &:hover,
+    &:focus,
+    &:active {
+        cursor: pointer;
+        background: $blue--dark;
+    }
+
+    &.btn--toggle-nav--active {
+        .btn--toggle-nav__icon {
+            transition: background .2s 0s ease-in-out;
+            background: transparent;
+
+            &:before,
+            &:after {
+                top: 0;
+
+                width: 2.5rem;
+
+                transition: top .2s ease-in-out, transform .2s .4s ease-in-out; //delay the formation of the x till the minus is formed
+            }
+
+            &:before {
+                transform: rotate3d(0,0,1,45deg);
+            }
+
+            &:after {
+                transform: rotate3d(0,0,1,-45deg);
+            }
+        }
+    }
+}
+
+.btn--toggle-nav__icon {
+    @include line($blue--lightest, .4rem);
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    transform: translate3d(-50%, -50%, 0);
+
+    &:before,
+    &:after {
+        content: '';
+
+        @include line($blue--lightest, .4rem);
+
+        position: absolute;
+
+        transform-origin: 50% 50%;
+        transition: top .2s .4s ease-in-out, transform .2s ease-in-out;
+    }
+
+    &:before {
+        top: 4px;
+    }
+
+    &:after {
+        top: -4px;
+    }
+
+
+    &:before {
+        top: .8rem;
+    }
+
+    &:after {
+        top: -.8rem;
+    }
+}

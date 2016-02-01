@@ -1,0 +1,23 @@
+/* ==========================================================================
+   Main Header
+   ========================================================================== */
+
+.main-header {
+    position: relative;
+
+    height: 7rem;
+    padding: 1rem 7rem 1rem 2rem;
+
+    background: $header-bg;
+
+    border-bottom: 1px solid $blue--lightest;
+}
+
+.main-header__link {
+    display: block;
+    height: 100%;
+}
+
+.site-logo {
+    height: 100%;
+}

@@ -1,0 +1,14 @@
+{
+  "name": "fontfaceobserver",
+  "homepage": "https://github.com/bramstein/fontfaceobserver",
+  "version": "1.4.17",
+  "_release": "1.4.17",
+  "_resolution": {
+    "type": "version",
+    "tag": "v1.4.17",
+    "commit": "8c9b8973cd9f5f5f97a308c90db252545ab8f2e0"
+  },
+  "_source": "git://github.com/bramstein/fontfaceobserver.git",
+  "_target": "~1.4",
+  "_originalSource": "fontfaceobserver"
+}

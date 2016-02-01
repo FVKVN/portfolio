@@ -1,0 +1,14 @@
+<aside class="main-nav__wrapper">
+    {% assign pages_list = site.pages %}
+    <nav class="main-nav" role="navigation">
+        {% for node in pages_list %}
+            {% if node.title != null %}
+                {% if node.layout == "page" %}
+                    <a class="main-nav__item{% if page.url == node.url %} active{% endif %}" href="{{ node.url }}">
+                        {{ node.title }}
+                    </a>
+                {% endif %}
+            {% endif %}
+        {% endfor %}
+    </nav>
+</aside>

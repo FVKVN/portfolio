@@ -1,0 +1,41 @@
+# Title, decription, tagline and URL for your site
+# Can be used in your theme by calling 'site.title' and so on
+title: fvkvn
+description: portfolio
+tagline: portfolio
+url: localhost:4000
+
+# Used so Jekyll outputs the site correctly so Gulp can do what it wants
+source: app
+destination: web
+
+# Same as the title etc for your site but can instead be
+# called by using 'site.author.name' and so on
+author:
+  name: Kevin
+  email: fivekevin@gmail.com
+  bio: Designer developer based in Ghent Belgium.
+  twitter: https://twitter.com/_fvkvn
+
+# general setting for Jekyll
+googleAnalytics: UA-XXXXX-X
+
+# _config.build.yml overwrites these options when you run `gulp build`
+# Enables future posts (posts with dates in the future) and drafts
+future: true
+show_drafts: true
+# Disables the more accurate related posts for faster generating of the site
+lsi: false
+# Only make the last 10 posts so generating isn't slow
+limit_posts: 10
+
+# Markdown library
+markdown: kramdown
+kramdown:
+  input: GFM
+  auto_ids: true
+  syntax_highlighter: rouge
+
+
+# Gems
+gems: [kramdown, jekyll-paginate, jekyll-gist, rouge]

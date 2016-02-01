@@ -1,0 +1,14 @@
+/* ==========================================================================
+   Line mixin
+   used in mobile nav button
+   ========================================================================== */
+
+@mixin line($background, $height) {
+    display: block;
+    width: 3rem;
+    height: $height;
+
+    background: $background;
+
+    transition: .2s;
+}
