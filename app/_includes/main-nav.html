@@ -1,0 +1,17 @@
+<div class="main-nav__wrapper" id="main-nav-wrapper" data-path-to="m 0,0 1439.999975,0 0,805.99999 -1439.999975,0 z">
+    <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 1440 806" preserveAspectRatio="none">
+        <path class="main-nav__wrapper__overlay-path" d="m 0,0 1439.999975,0 0,805.99999 0,-805.99999 z"/>
+    </svg>
+    {% assign pages_list = site.pages %}
+    <nav class="main-nav" role="navigation">
+        {% for node in pages_list %}
+            {% if node.title != null %}
+                {% if node.layout == "page" %}
+                    <a class="main-nav__item{% if page.url == node.url %} main-nav__item--active{% endif %}" href="{{ node.url }}">
+                        {{ node.title }}
+                    </a>
+                {% endif %}
+            {% endif %}
+        {% endfor %}
+    </nav>
+</div>

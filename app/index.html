@@ -1,4 +1,76 @@
 ---
-layout: default
-title: Home
+layout: homepage
+title: FVKVN
+subtitle: Designer / Developer based in Ghent, Belgium.
 ---
+
+    <div class="container page-section__container">
+        <div class="row">
+            <div class="col-md-12">
+                <section class="page-section">
+                    <h2 class="page-section__header text--center">Hi, I'm Kevin</h2>
+                    <p class="text--center">I'm a designer / front-end developer based in Ghent Belgium, I'm currently employed as a front-end developer at Kunstmaan, a communication agency in Leuven. Besides this I'm <a href="#">available</a> for freelance work.</p>
+                    <div class="btn__wrapper text--center">
+                        <a href="/about.html" class="btn btn--primary">More about me</a>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </div>
+
+
+    {% assign pages_list = site.pages %}
+    <div class="page-section page-section--fluid">
+        <div class="flex-grid">
+            {% for node in pages_list %}
+                {% if node.title != null %}
+                    {% if node.layout == "work-detail" %}
+                    {% capture count %}{{ count | plus: '1' }}{% endcapture %}
+                        {% if count <= '3' %}
+                        <a href="{{ node.url }}" class="flex-item image-block__link js-ajax-link">
+                            <figure class="image-block">
+                                <img src="img/dummy/{{ node.thumb_img}}" alt="" class="image-block__image">
+                                <figcaption class="image-block__caption">
+                                    <h4 class="image-block__title">{{ node.title }}</h4>
+                                    <p class="image-block__description">{{ node.description }}</p>
+                                </figcaption>
+                            </figure>
+                        </a>
+                        {% endif %}
+                    {% endif %}
+                {% endif %}
+            {% endfor %}
+        </div>
+    </div>
+
+    <div class="container page-section__container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="page-section">
+                    <div class="text--center">
+                        <a href="/work.html" class="btn btn--primary">More work</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--<div class="container page-section__container">-->
+    <!--<div class="row">-->
+    <!--<div class="col-md-12">-->
+    <!--<section class="page-section">-->
+    <!--<h2 class="page-section__header text&#45;&#45;center">Reading material</h2>-->
+    <!--<div class="btn__wrapper text&#45;&#45;center">-->
+    <!--<a href="" class="btn btn&#45;&#45;primary">More blog posts</a>-->
+    <!--</div>-->
+    <!--</section>-->
+    <!--</div>-->
+    <!--</div>-->
+    <!--</div>-->
+</div>
+
+<div class="ajax-section">
+
+</div>
+
+

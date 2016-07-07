@@ -9,12 +9,10 @@ var gulp = require('gulp'),
     path = require('path'),
     _ = require('lodash'),
     through = require('through2'),
-    rebase = require("rebase/tasks/gulp-rebase"),
+    rebase = require('rebase/tasks/gulp-rebase'),
     notifier = require('node-notifier'),
     runSequence = require('run-sequence'),
-    browserSync = require("browser-sync"),
-    reload = browserSync.reload,
-    bs,
+    browserSync = require('browser-sync').create(),
     plugins = require('gulp-load-plugins')();
 
 // Gulp Config
@@ -28,7 +26,9 @@ var resourcesPath = './app/resources/',
 
 var jsFooter = [
     bowerComponentsPath + 'jquery/dist/jquery.min.js',
-    bowerComponentsPath + 'fontfaceobserver/fontfaceobserver.js',
+    bowerComponentsPath + 'gsap/src/minified/TweenMax.min.js',
+    bowerComponentsPath + 'snap.svg/dist/snap.svg-min.js',
+    bowerComponentsPath + 'list.js/dist/list.js',
     resourcesPath + 'ui/js/**/*.js'
 ];
 
@@ -47,7 +47,7 @@ errorLogger = function(headerMessage,errorMessage){
         notifier.notify({
             'title': headerMessage,
             'message': errorMessage,
-            'contentImage':  __dirname + "/gulp_error.png"
+            'contentImage':  __dirname + '/gulp_error.png'
         });
     }
 };
@@ -64,13 +64,13 @@ headerLines = function(message){
  ========================================================================== */
 
 //development build
-gulp.task("jekyll:dev", plugins.shell.task("JEKYLL_ENV=development jekyll build"));
-gulp.task("jekyll-rebuild", ["jekyll:dev"], function () {
-    reload;
+gulp.task('jekyll:dev', plugins.shell.task('JEKYLL_ENV=development bundle exec jekyll build'));
+gulp.task('jekyll-rebuild', ['jekyll:dev'], function () {
+    browserSync.reload;
 });
 
 //production build
-gulp.task("jekyll:prod", plugins.shell.task("JEKYLL_ENV=production jekyll build --config _config.yml,_config.build.yml"));
+gulp.task('jekyll:prod', plugins.shell.task('JEKYLL_ENV=production bundle exec jekyll build --config _config.yml,_config.build.yml'));
 
 /* Styles
  ========================================================================== */
@@ -83,7 +83,7 @@ gulp.task('styles', function() {
         .pipe(plugins.combineMq())
 
         // Prefix where needed
-        .pipe(plugins.autoprefixer("ie 11"))
+        .pipe(plugins.autoprefixer('ie 11'))
 
         // Minify output
         .pipe(plugins.minifyCss())
@@ -132,7 +132,7 @@ gulp.task('scripts-prod', ['jshint'], function() {
 });
 
 gulp.task('inject-prod-scripts', ['scripts-prod'], function() {
-    return gulp.src(resourcesPath + 'app/_includes/js_footer.html')
+    return gulp.src('./app/_includes/js_footer.html')
         // Inject
         .pipe(plugins.inject(gulp.src(distPath + '/js/*.js'), {
             transform: addAsyncTag,
@@ -157,7 +157,7 @@ gulp.task('scripts-dev', ['jshint'], function() {
 gulp.task('inject-dev-scripts', ['scripts-dev'], function() {
     var files = gulp.src(jsFooter, {read: false});
 
-    return gulp.src(resourcesPath + 'app/_includes/js_footer.html')
+    return gulp.src(distPath + '**/*.html')
         // Inject
         .pipe(plugins.inject(files))
 
@@ -168,8 +168,7 @@ gulp.task('inject-dev-scripts', ['scripts-dev'], function() {
             }
         }))
 
-        // Write
-        .pipe(gulp.dest(resourcesPath + 'app/_includes/js_footer.html'));
+        .pipe(gulp.dest(distPath));
 });
 
 /* Images
@@ -204,23 +203,38 @@ gulp.task('fonts', function() {
 
 /* Clean/clear
  ========================================================================== */
-gulp.task("clean", del.bind(null, ["web"]));
+gulp.task('clean', del.bind(null, ['web']));
 
 /* Browsersync
  ========================================================================== */
-gulp.task("serve:dev", ["styles", "inject-dev-scripts", "jekyll:dev"], function () {
-    bs = browserSync({
-        notify: true,
+gulp.task('serve:dev', function () {
+    browserSync.init({
         server: {
-            baseDir: "web"
+            baseDir: 'web'
         }
     });
+
+    gulp.watch(['./app/**/*.md', './app/**/*.html', './app/**/*.xml', './app/**/*.txt'], ['styles', 'images','inject-dev-scripts', 'jekyll-rebuild']);
+    gulp.watch([distPath + 'css/*.css'], browserSync.reload);
+    gulp.watch([resourcesPath + 'ui/scss/**/*.scss'], ['styles']);
+    gulp.watch([resourcesPath + 'ui/js/**/*.js'], ['inject-dev-scripts']);
+    gulp.watch([resourcesPath + 'ui/img/**/*.{png,jpg,jpeg,gif,svg,webp}'], ['images']);
 });
 
 /* Watch
  ========================================================================== */
 gulp.task('watch', function() {
-    gulp.watch([resourcesPath + 'ui/scss/**/*.scss'], ['styles']);
-    gulp.watch([resourcesPath + 'ui/js/**/*.js'], ['inject-dev-scripts']);
-    gulp.watch([resourcesPath + 'ui/img/**/*.{png,jpg,jpeg,gif,svg,webp}'], ['images']);
+
+});
+
+/* Bundled
+ ========================================================================== */
+// Default task
+gulp.task('default', function(done) {
+    runSequence(
+        'clean',
+        'jekyll:dev',
+        ['styles', 'images', 'fonts', 'inject-dev-scripts'],
+        'serve:dev',
+    done);
 });

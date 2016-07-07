@@ -23,9 +23,49 @@ html {
 body {
     min-height: 100%;
     width: 100%;
+
+    overflow: hidden;
+
+    background: $blue--dark;
 }
 
-html,
-body {
-    font-size: $font-size--base;
+.overflow {
+    overflow: hidden !important;
+}
+
+.main-content {
+    background: $blue--dark;
+
+    padding: 0;
+
+    @media (min-width: $screen-sm) {
+        position: relative;
+        z-index: 1;
+
+        margin-top: 50vh;
+    }
+
+    @media (min-width: $screen-md) {
+        margin-top: 100vh;
+    }
+}
+
+.no-hero {
+    .main-content {
+        margin: 0 !important;
+    }
+}
+
+
+
+/* Figures
+   ========================================================================== */
+
+figure {
+    margin: 0;
+}
+
+.container {
+    width: 100% !important;
+    max-width: 120rem !important;
 }

@@ -13,20 +13,38 @@
 $black:                 #000000;
 $white:                 #fff;
 
-$grey--darkest:         #1E1E1E;
+$grey--darkest:         #0c0c0c;
 $grey--dark:            #383838;
 $grey--darker:          #4a4a4a;
 $grey:                  #777777;
 $grey--lighter:         #BFBFBF;
 $grey--light:           #EDEDED;
 
-$blue--darkest:         #000830;
-$blue--dark:            #000842;
-$blue--lightest:        #CBCDDA;
+$blue--darkest:         #000429;
+$blue--dark:            #00032f;
+$blue:                  #166780;
+$blue--light:           #51BFFF;
+$blue--lightest:        #01ffc1;
+
+$orange:                #F54540;
+
+$pink:                  #F32F64;
+
+$red:                   #ff003b;
+
+$purple:                #763162;
+
+$yellow:                #ffc000;
+$yellow--lightest:      #f1ff00;
+
+
+$theme-primary:         $blue--lightest;
+$theme-secondary:       $purple;
+
 
 // specifics
 
-$header-bg:             $blue--darkest;
-$header-font:           $blue--lightest;
+$text-color:            $white;
+$header-color:          $yellow;
 
 $text-color:            $black;

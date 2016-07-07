@@ -1,25 +1,20 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us" id="html" >
 
 {% include head.html %}
 
-<body>
 
-<header class="main-header">
-    <a href="/" class="main-header__link">
-        {% include logo.html %}
-    </a>
-    <button class="js-toggle js-nav-button btn btn--toggle-nav" data-target="#nav">
-        <i class="btn--toggle-nav__icon"></i>
-    </button>
-</header>
+<body class="{% contentblock bodyclass %}">
 
-<div class="slide-wrapper">
-    <main class="main-content">
-        {{ content }}
-    </main>
-    {% include sidebar.html %}
-</div>
+{% include header.html %}
+
+{% include main-nav.html %}
+
+{% contentblock hero %}
+
+{{ content }}
+
+{% include footer.html %}
 
 {% include js_footer.html %}
 </body>

@@ -1,0 +1,75 @@
+/* ==========================================================================
+   Main nav
+   ========================================================================== */
+
+.main-nav__wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: z(heaven);
+
+    height: 100vh;
+    width: 100vw;
+    padding: 10rem 2rem 2rem 2rem;
+
+    background: transparent;
+
+    visibility: hidden;
+
+    transition: visibility 0s .5s;
+
+    &.open {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        visibility: visible;
+
+        transition: none;
+
+        .main-nav {
+            opacity: 1;
+
+            transition-delay: 0s;
+        }
+
+    }
+
+    &.close {
+        .main-nav {
+            transition-delay: .5s;
+        }
+    }
+
+    svg {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: (z(modal + 1));
+    }
+}
+
+.main-nav__wrapper__overlay-path {
+    fill: rgba($blue--dark, .9);
+}
+
+.main-nav {
+    position: relative;
+    z-index: (z(modal + 2));
+
+    opacity: 0;
+
+    transition: opacity .4s .4s;
+}
+
+.main-nav__item {
+    display: block;
+    padding: 2rem;
+
+    text-decoration: none;
+    color: $theme-primary;
+    font-size: 4rem;
+    text-align: center;
+    text-transform: uppercase;
+    font-family: $secondary-font--bold;
+}

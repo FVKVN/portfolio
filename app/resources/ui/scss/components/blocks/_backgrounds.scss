@@ -1,0 +1,25 @@
+/* ==========================================================================
+   Backgrounds
+   ========================================================================== */
+
+// @todo: move this to helper classes
+
+.background--grey {
+    background-color: $grey--light;
+}
+
+.background--grey--dark {
+    background-color: $blue--darkest;
+}
+
+.background--white {
+    background-color: $white;
+}
+
+.background--primary {
+    background-color: $theme-primary;
+}
+
+.background--secondary {
+    background-color: $theme-secondary;
+}

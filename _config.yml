@@ -8,6 +8,7 @@ url: localhost:4000
 # Used so Jekyll outputs the site correctly so Gulp can do what it wants
 source: app
 destination: web
+exclude: [resources]
 
 # Same as the title etc for your site but can instead be
 # called by using 'site.author.name' and so on
@@ -38,4 +39,4 @@ kramdown:
 
 
 # Gems
-gems: [kramdown, jekyll-paginate, jekyll-gist, rouge]
+gems: [kramdown, jekyll-paginate, jekyll-gist, rouge, jekyll-contentblocks]

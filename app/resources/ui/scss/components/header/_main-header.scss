@@ -3,21 +3,39 @@
    ========================================================================== */
 
 .main-header {
-    position: relative;
+    position: fixed;
+    top: 0;
+    z-index: z(heaven) + 1;
 
     height: 7rem;
     padding: 1rem 7rem 1rem 2rem;
+    width: 100%;
 
-    background: $header-bg;
+    background: transparent;
 
-    border-bottom: 1px solid $blue--lightest;
+    transform: translate3d(0, -100%, 0);
+    transition: transform .3s ease-in-out;
+}
+
+.polygon-animation-done {
+    .main-header {
+        transform: translate3d(0, 0, 0);
+    }
 }
 
 .main-header__link {
-    display: block;
+    display: inline-block;
     height: 100%;
+
+    &:after {
+        content: none;
+    }
 }
 
 .site-logo {
     height: 100%;
+
+    #logo {
+        fill: $theme-primary;
+    }
 }

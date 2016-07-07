@@ -1,0 +1,96 @@
+/* ==========================================================================
+   Filters
+   ========================================================================== */
+
+.filters__wrapper {
+    position: fixed;
+    bottom: 0;
+
+    width: 100%;
+
+    background: $grey--darkest;
+
+    transform: translate3d(0, 100%, 0);
+
+    transition: transform .3s ease-in-out;
+
+    &:hover,
+    &:focus {
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+.filters {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+}
+
+.filter-item--hide {
+    display: none;
+}
+
+.filters__wrapper__icon {
+    position: absolute;
+    top: -7rem;
+    left: 50%;
+
+    width: 7rem;
+    height: 7rem;
+    display: inline-block;
+    padding: 2rem;
+
+    transform: translate3d(-50%, 0, 0);
+
+    text-align: center;
+
+    span {
+        @include line-variable-width($theme-primary, .4rem, 2rem);
+
+        position: absolute;
+        top: 50%;
+        left: 50%;
+
+        transform: translate3d(-50%, -50%, 0);
+
+
+        &:before,
+        &:after {
+            content: '';
+
+            position: absolute;
+            left: 50%;
+
+            transform: translate3d(-50%, 0, 0);
+
+            transform-origin: 50% 50%;
+            transition: top .2s .4s ease-in-out, transform .2s ease-in-out;
+        }
+
+        &:before {
+            @include line-variable-width($theme-primary, .4rem, 1rem);
+
+            top: .8rem;
+
+            text-align: center;
+        }
+
+        &:after {
+            @include line-variable-width($theme-primary, .4rem, 3rem);
+
+            top: -.8rem;
+
+            text-align: center;
+        }
+    }
+}
+
+.filters__title {
+    display: block;
+    width: 100%;
+    margin-top: 0;
+
+    text-align: center;
+}
+

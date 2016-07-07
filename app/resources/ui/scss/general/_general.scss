@@ -8,3 +8,10 @@
 /* Base
    ========================================================================== */
 @import "base";
+
+/* Typography
+   ========================================================================== */
+
+@import "typography/bodycopy",
+        "typography/headings",
+        "typography/iconfont";

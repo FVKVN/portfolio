@@ -12,8 +12,9 @@
 
 /* Mixins
    ========================================================================== */
-@import "mixins/line";
+@import "mixins/line",
+        "mixins/gradients";
 
 /* Classes
    ========================================================================== */
-//@import "classes";
+@import "classes";

@@ -7,11 +7,20 @@
 
 /* Blocks
    ========================================================================== */
-@import 'blocks/buttons';
+@import 'blocks/buttons',
+        'blocks/polygon-animation',
+        'blocks/backgrounds',
+        'blocks/image-block',
+        'blocks/links',
+        'blocks/progress-bar';
 
 /* Structures
    ========================================================================== */
-//@import ;
+@import 'structures/hero',
+        'structures/page-sections',
+        'structures/flex-grid',
+        'structures/filters',
+        'structures/skill-box';
 
 /* Header
    ========================================================================== */
@@ -19,15 +28,19 @@
 
 /* Navigation
    ========================================================================== */
-//@import ;
+@import 'navigation/main-nav';
 
 /* Footer
    ========================================================================== */
-//@import ;
+@import 'footer/main-footer';
 
 /* Forms
    ========================================================================== */
-//@import ;
+@import 'forms/checkbox-radiobtns';
+
+/* Pages
+   ========================================================================== */
+@import 'pages/homepage';
 
 /* Vendors
    ========================================================================== */

@@ -12,3 +12,13 @@
 
     transition: .2s;
 }
+
+@mixin line-variable-width($background, $height, $width) {
+    display: block;
+    width: $width;
+    height: $height;
+
+    background: $background;
+
+    transition: .2s;
+}

@@ -1,0 +1,28 @@
+/* ==========================================================================
+   skill box
+   ========================================================================== */
+
+.skill-box {
+    position: relative;
+
+    display: block;
+    padding: 2rem 2rem 2.5rem 2rem;
+
+    background: $grey--darkest;
+
+    .progress-bar__wrapper {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+    }
+
+    & + .skill-box {
+        margin-top: 2rem;
+    }
+}
+
+.skill-box__title {
+    margin: 0;
+
+    color: $theme-primary;
+}

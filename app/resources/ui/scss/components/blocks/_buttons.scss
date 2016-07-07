@@ -8,7 +8,7 @@
     padding: 1.6rem 2rem;
 
     background: none;
-    border: 1px solid $text-color;
+    border: .2rem solid $text-color;
     -webkit-appearance: none;
 
     color: $text-color;
@@ -17,13 +17,19 @@
     text-decoration: none;
     vertical-align: middle;
     line-height: 1;
+    font-family: $font-family--buttons;
+    font-weight: 400;
 
     cursor: pointer;
     user-select: none;
 
-    transition: background .3s ease-in-out;
+    transition: background .3s ease-in-out, color .3s ease-in-out;
 
     border-radius: 0;
+
+    &:after {
+        content: none;
+    }
 
     &:hover, &:focus, &:active {
         text-decoration: none;
@@ -54,6 +60,40 @@
     }
 }
 
+.btn--primary {
+    border-color: $theme-primary;
+
+    color: $theme-primary;
+
+
+    &:hover,
+    &:focus,
+    &:active {
+        background: rgba($theme-primary, .3);
+
+        color: $theme-primary;
+    }
+}
+
+.btn--secondary {
+    border-color: $theme-secondary;
+
+    color: $theme-secondary;
+
+
+    &:hover,
+    &:focus,
+    &:active {
+        background: rgba($theme-secondary, .3);
+
+        color: $theme-secondary;
+    }
+}
+
+.btn__wrapper {
+    margin-top: 4rem;
+}
+
 /* Mobile nav toggle
    ========================================================================== */
 .btn--toggle-nav {
@@ -64,27 +104,22 @@
     width: 7rem;
     height: 7rem;
     display: inline-block;
-    padding: 0;
+    padding: 2rem;
 
-    background: $header-bg;
+    background: none;
 
-    border: {
-        top: none;
-        right: none;
-        bottom: 1px solid $blue--lightest;
-        left: 1px solid $blue--lightest;
-    }
+    border: none;
 
-    color: $blue--lightest;
+    color: $theme-primary;
 
     &:hover,
     &:focus,
     &:active {
         cursor: pointer;
-        background: $blue--dark;
+        background: none;
     }
 
-    &.btn--toggle-nav--active {
+    &.toggle--active {
         .btn--toggle-nav__icon {
             transition: background .2s 0s ease-in-out;
             background: transparent;
@@ -93,7 +128,7 @@
             &:after {
                 top: 0;
 
-                width: 2.5rem;
+                width: 3rem;
 
                 transition: top .2s ease-in-out, transform .2s .4s ease-in-out; //delay the formation of the x till the minus is formed
             }
@@ -107,10 +142,14 @@
             }
         }
     }
+
+    @media (min-width: $screen-sm) {
+        width: 7rem;
+    }
 }
 
 .btn--toggle-nav__icon {
-    @include line($blue--lightest, .4rem);
+    @include line($theme-primary, .4rem);
 
     position: absolute;
     top: 50%;
@@ -122,22 +161,13 @@
     &:after {
         content: '';
 
-        @include line($blue--lightest, .4rem);
+        @include line($theme-primary, .4rem);
 
         position: absolute;
 
         transform-origin: 50% 50%;
         transition: top .2s .4s ease-in-out, transform .2s ease-in-out;
     }
-
-    &:before {
-        top: 4px;
-    }
-
-    &:after {
-        top: -4px;
-    }
-
 
     &:before {
         top: .8rem;
