@@ -16,8 +16,7 @@ fvkvn.polygonAnimation = function() {
             _tmaxTl = new TimelineMax(_options),
             _shapes = $('svg.hero__visual > g polygon'),
             _stagger = 0.00475,
-            _duration = 1.5,
-            _alreadyPlayed = $('html').hasClass('polygon-animation-done');
+            _duration = 1.5;
 
         var polygon_staggerFrom = {
             scale: 0,
@@ -31,8 +30,6 @@ fvkvn.polygonAnimation = function() {
             ease: Elastic.easeInOut
         };
 
-        if(!_alreadyPlayed) {
-            _tmaxTl.staggerFromTo(_shapes, _duration, polygon_staggerFrom, polygon_staggerTo, _stagger, 0);
-        }
+        _tmaxTl.staggerFromTo(_shapes, _duration, polygon_staggerFrom, polygon_staggerTo, _stagger, 0);
     })();
 };

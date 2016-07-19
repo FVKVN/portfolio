@@ -20,11 +20,23 @@ fvkvn = (function($, window, undefined) {
 
     init = function() {
         fvkvn.toggle();
-        fvkvn.polygonAnimation();
-        fvkvn.parallaxHeader();
-        fvkvn.filter();
-        fvkvn.ajax();
-        fvkvn.progressBars();
+        // fvkvn.ajax();
+
+        if ($('.js-parallax').length > 0) {
+            fvkvn.parallaxHeader();
+        }
+
+        if ($('.js-filter').length > 0) {
+            fvkvn.filter();
+        }
+
+        if ($('.js-progress-bar').length > 0) {
+            fvkvn.progressBars();
+        }
+
+        if($('.polygon-animation-done').length === 0) {
+            fvkvn.polygonAnimation();
+        }
     };
 
     return _buildReturnObject();

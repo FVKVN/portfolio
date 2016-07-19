@@ -156,6 +156,7 @@
     left: 50%;
 
     transform: translate3d(-50%, -50%, 0);
+    transition: background .3s ease-in-out;
 
     &:before,
     &:after {
@@ -166,7 +167,7 @@
         position: absolute;
 
         transform-origin: 50% 50%;
-        transition: top .2s .4s ease-in-out, transform .2s ease-in-out;
+        transition: top .2s .4s ease-in-out, transform .2s ease-in-out, background .3s ease-in-out;
     }
 
     &:before {
