@@ -61,13 +61,13 @@
     margin-top: 0;
 
     text-align: center;
-    color: rgba($white, .7);
+    color: $white;
 
     transform: translate3d(0, -3rem, 0);
 }
 
 .image-block__description {
-    color: rgba($white, .7);
+    color: $white;
     font-size: 1.6rem;
     text-align: center;
 
