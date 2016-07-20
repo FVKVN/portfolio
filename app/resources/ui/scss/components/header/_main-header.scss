@@ -40,18 +40,3 @@
         transition: fill .3s ease-in-out;
     }
 }
-
-.color-change {
-    #logo {
-        fill: $white;
-    }
-
-    .btn--toggle-nav__icon {
-        background: $white;
-
-        &:before,
-        &:after {
-            background: $white;
-        }
-    }
-}

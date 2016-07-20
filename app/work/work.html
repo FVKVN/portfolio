@@ -2,21 +2,23 @@
 layout: page
 title: Work
 permalink: /work.html
+state: active
 ---
 
 {% contentfor bodyclass %}work no-hero{% endcontentfor %}
 {% contentfor hero %}{% endcontentfor %}
 
 <main class="main-content">
-    <div class="container page-section__container">
-        <div class="row">
-            <div class="col-md-12">
-                <section class="page-section">
+
+    <section class="page-section">
+        <div class="container page-section__container">
+            <div class="row">
+                <div class="col-md-12">
                     <h1 class="page-title">{{ page.title }}</h1>
-                </section>
+                </div>
             </div>
         </div>
-    </div>
+    </section>
 
     {% assign pages_list = site.pages %}
     <div class="page-section page-section--fluid background--work">
@@ -66,5 +68,3 @@ permalink: /work.html
 
 
 </main>
-
-

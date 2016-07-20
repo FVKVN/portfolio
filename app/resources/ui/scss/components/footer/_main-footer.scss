@@ -3,16 +3,18 @@
    ========================================================================== */
 
 .main-footer {
-
     padding: 2rem;
 
-    @include gradient--diagonal(rgba($theme-primary, 1), rgba($theme-secondary, 1));
+    // @include gradient--diagonal(rgba($theme-primary, 1), rgba($theme-secondary, 1));
+    background: $theme-secondary;
 
 
     p {
         margin: 0;
+
         font-size: 1.3rem;
-        color: $blue--dark;
+        line-height: 1;
+        color: $theme-primary;
     }
 
 }

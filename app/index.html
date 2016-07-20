@@ -9,10 +9,10 @@ subtitle: Designer / Developer based in Ghent, Belgium.
             <div class="col-md-12">
                 <section class="page-section">
                     <h2 class="page-section__header text--center">Hi, I'm Kevin</h2>
-                    <p class="text--center">I'm a designer / front-end developer based in Ghent Belgium, I'm currently employed as a front-end developer at Kunstmaan, a communication agency in Leuven. Besides this I'm <a href="#">available</a> for freelance work.</p>
-                    <div class="btn__wrapper text--center">
+                    <p class="text--center">I'm a designer / front-end developer based in Ghent Belgium, I'm currently employed as a front-end developer at Kunstmaan, a communication agency in Leuven. Besides this I'm <a href="/contact.html">available</a> for freelance work.</p>
+                    <p class="btn__wrapper text--center">
                         <a href="/about.html" class="btn btn--primary">More about me</a>
-                    </div>
+                    </p>
                 </section>
             </div>
         </div>
@@ -29,7 +29,7 @@ subtitle: Designer / Developer based in Ghent, Belgium.
                         {% if count <= '3' %}
                         <a href="{{ node.url }}" class="flex-item image-block__link js-ajax-link">
                             <figure class="image-block">
-                                <img src="img/dummy/{{ node.thumb_img}}" alt="" class="image-block__image">
+                                <img src="img/projects/{{ node.img_folder}}/{{ node.thumb_img}}" alt="" class="image-block__image">
                                 <figcaption class="image-block__caption">
                                     <h4 class="image-block__title">{{ node.title }}</h4>
                                     <p class="image-block__description">{{ node.description }}</p>
@@ -72,5 +72,3 @@ subtitle: Designer / Developer based in Ghent, Belgium.
 <div class="ajax-section">
 
 </div>
-
-

@@ -4,14 +4,18 @@
     </svg>
     {% assign pages_list = site.pages %}
     <nav class="main-nav" role="navigation">
-        {% for node in pages_list %}
-            {% if node.title != null %}
-                {% if node.layout == "page" %}
-                    <a class="main-nav__item{% if page.url == node.url %} main-nav__item--active{% endif %}" href="{{ node.url }}">
-                        {{ node.title }}
-                    </a>
+        <ul class="main-nav__list">
+            {% for node in pages_list %}
+                {% if node.title != null %}
+                    {% if node.layout == "page" %}
+                        <li class="main-nav__list-item">
+                            <a class="main-nav__item{% if page.url == node.url %} main-nav__item--active{% endif %} {% if node.state == "inactive"%} js-link-disabled link--disabled {% endif %}" href="{{ node.url }}">
+                                {{ node.title }}
+                            </a>
+                        </li>
+                    {% endif %}
                 {% endif %}
-            {% endif %}
-        {% endfor %}
+            {% endfor %}
+        </ul>                
     </nav>
 </div>

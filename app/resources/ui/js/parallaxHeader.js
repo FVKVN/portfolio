@@ -7,8 +7,7 @@ fvkvn.parallaxHeader = function() {
 
     var $element = $('.js-parallax'),
         elementHeight = $element.height(),
-        containerHeight = $element.parent().height(),
-        $header = $('.js-header');
+        containerHeight = $element.parent().height();
 
     var _scrollTop = 0;
 
@@ -25,10 +24,6 @@ fvkvn.parallaxHeader = function() {
 
         if (_scrollTop <= containerHeight) {
             window.requestAnimationFrame(_parallaxHandler);
-
-            $header.addClass('color-change');
-        } else {
-            $header.removeClass('color-change');
         }
     };
 
