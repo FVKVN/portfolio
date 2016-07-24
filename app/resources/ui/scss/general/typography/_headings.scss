@@ -39,7 +39,6 @@ h2 {
     margin: 3rem 0;
 
     font-size: 2.5rem;
-    font-weight: 400;
     color: $theme-primary;
 
     @media(min-width: $screen-md-min) {
@@ -53,7 +52,8 @@ h3 {
     margin: 3rem 0;
 
     font-size: 2.2rem;
-    color: $black;
+    font-weight: 400;
+    color: $theme-primary;
 
     @media(min-width: $screen-md) {
         margin: 5rem 0;
