@@ -5,4 +5,52 @@ permalink: /contact.html
 state: active
 ---
 
-{% contentfor bodyclass %}contact{% endcontentfor %}
+{% contentfor bodyclass %}contact no-hero{% endcontentfor %}
+{% contentfor hero %}{% endcontentfor %}
+
+<main class="main-content">
+    <section class="page-section">
+        <div class="container page-section__container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h1 class="page-title">{{ page.title }}</h1>
+                    <p>
+                        Feel free to drop a line using the form or contact me using the social media links
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="page-section  background--theme-primary">
+        <div class="page-section__container container">
+            <div class="row">
+                <div class="col-md-7">
+                    <form action="https://getsimpleform.com/messages?form_api_token=081290cd3bd1acc9137f8ddf2897edf6" method="post">
+                        <!-- the redirect_to is optional, the form will redirect to the referrer on submission -->
+                        <input type='hidden' name='redirect_to' value='/thanks.html' />
+                        <!-- all your input fields here.... -->
+                        <div class="form-group">
+                            <label for="name" class="form-control__label">Your name</label>
+                            <input type='text' name='name' class="form-control"/>
+                        </div>
+                        <div class="form-group">
+                            <label for="email" class="form-control__label">Your e-mail</label>
+                            <input type='email' name='email' class="form-control"/>
+                        </div>
+                        <div class="form-group">
+                            <label for="Message" class="form-control__label">Your message</label>
+                            <input type='textarea' name='message' class="form-control form-control--textarea"/>
+                        </div>
+                        <div class="form-group">
+                            <input type='submit' value='Submit' class="btn btn--white"/>
+                        </div>
+
+
+
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>

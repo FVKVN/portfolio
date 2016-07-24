@@ -90,6 +90,21 @@
     }
 }
 
+.btn--white {
+    border-color: $white;
+
+    color: $white;
+
+
+    &:hover,
+    &:focus,
+    &:active {
+        background: rgba($white, .3);
+
+        color: $white;
+    }
+}
+
 .btn__wrapper {
     margin-top: 4rem;
 }
@@ -101,22 +116,25 @@
     top: 0;
     right: 0;
 
-    width: 7rem;
     height: 7rem;
+    width: auto;
     display: inline-block;
-    padding: 2rem;
+    padding: 2rem 7rem 2rem 2rem;
 
     background: none;
 
     border: none;
 
-    color: $white;
+    color: $theme-primary;
+    line-height: 3rem;
+    font-size: 1.2rem;
 
     &:hover,
     &:focus,
     &:active {
         cursor: pointer;
         background: none;
+        color: $theme-primary;
     }
 
     &.toggle--active {
@@ -144,7 +162,7 @@
     }
 
     @media (min-width: $screen-sm) {
-        width: 7rem;
+        font-size: 1.2rem;
     }
 }
 
@@ -153,9 +171,9 @@
 
     position: absolute;
     top: 50%;
-    left: 50%;
+    right: 2rem;
 
-    transform: translate3d(-50%, -50%, 0);
+    transform: translate3d(0, -50%, 0);
     transition: background .3s ease-in-out;
 
     &:before,
