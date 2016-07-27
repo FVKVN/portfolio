@@ -11,10 +11,14 @@
     padding: 1rem 7rem 1rem 2rem;
     width: 100%;
 
-    background: transparent;
+    background: $theme-primary;
 
     transform: translate3d(0, -100%, 0);
     transition: transform .3s ease-in-out;
+
+    @media(min-width: $screen-md) {
+        background: transparent;
+    }
 }
 
 .polygon-animation-done {
@@ -36,7 +40,11 @@
     height: 100%;
 
     #logo {
-        fill: $theme-primary;
+        fill: $theme-secondary;
         transition: fill .3s ease-in-out;
+
+        @media(min-width: $screen-md) {
+            fill: $theme-primary;
+        }
     }
 }

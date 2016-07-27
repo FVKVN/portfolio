@@ -1,0 +1,43 @@
+/* ==========================================================================
+   Work detail
+   ========================================================================== */
+
+.work-detail__panels {
+    @media(min-width: $screen-md) {
+        display: flex;
+        flex-direction: row;
+    }
+}
+.work-detail__panel {
+    @media(min-width: $screen-md) {
+        min-height: calc(100vh - 5.3rem);
+    }
+
+    &--visual {
+        background: $theme-secondary;
+
+        @media(min-width: $screen-md) {
+            width: 60vw;
+        }
+    }
+
+    &--info {
+        padding: 7rem;
+
+        background: $white;
+
+        @media(min-width: $screen-md) {
+            width: 40vw;
+        }
+    }
+}
+
+.work-detail__panel__title,
+.work-detail__panel__sub-title {
+    margin: 0 0 2rem 0;
+}
+
+
+.work-detail__panel__title {
+    font-size: 5rem;
+}

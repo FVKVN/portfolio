@@ -37,6 +37,10 @@ fvkvn = (function($, window, undefined) {
         if($('.polygon-animation-done').length === 0) {
             fvkvn.polygonAnimation();
         }
+
+        if($('.js-slider').length > 0) {
+            fvkvn.sliders();
+        }
     };
 
     return _buildReturnObject();

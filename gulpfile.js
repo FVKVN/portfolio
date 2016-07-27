@@ -28,7 +28,7 @@ var jsFooter = [
     bowerComponentsPath + 'jquery/dist/jquery.min.js',
     bowerComponentsPath + 'gsap/src/minified/TweenMax.min.js',
     bowerComponentsPath + 'snap.svg/dist/snap.svg-min.js',
-    bowerComponentsPath + 'list.js/dist/list.js',
+    bowerComponentsPath + 'slick-carousel/slick/slick.min.js',
     resourcesPath + 'ui/js/**/*.js'
 ];
 
