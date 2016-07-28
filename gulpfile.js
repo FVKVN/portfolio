@@ -221,12 +221,6 @@ gulp.task('serve:dev', function () {
     gulp.watch([resourcesPath + 'ui/img/**/*.{png,jpg,jpeg,gif,svg,webp}'], ['images']);
 });
 
-/* Watch
- ========================================================================== */
-gulp.task('watch', function() {
-
-});
-
 /* Bundled
  ========================================================================== */
 // Default task

@@ -14,7 +14,7 @@
     }
 
     &--visual {
-        background: $theme-secondary;
+        @include gradient--diagonal(rgba($theme-primary, .7), rgba($theme-secondary, .7));
 
         @media(min-width: $screen-md) {
             width: 60vw;

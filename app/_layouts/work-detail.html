@@ -19,10 +19,13 @@ layout: page
             {% contentblock work_detail_panel_visual %}
         </div>
         <section class="work-detail__panel work-detail__panel--info">
-            <a href="../work.html">back</a>
+            <p><a href="../work.html">back</a></p>
             <h1 class="work-detail__panel__title">{{ page.title }}</h1>
             <p class="intro-text work-detail__panel__intro">{{ page.intro }}</p>
             <h3 class="work-detail__panel__sub-title">What exactly did I do?</h3>
+            <p>
+                {{ page.function }}
+            </p>
 
             {{ content }}
         </section>

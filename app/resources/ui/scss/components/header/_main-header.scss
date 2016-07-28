@@ -47,4 +47,34 @@
             fill: $theme-primary;
         }
     }
+
+    &:hover {
+        animation: booty .2s ease-in-out infinite;
+    }
+}
+
+@keyframes booty {
+    0% {
+        transform: translate3d(0, -.5rem, 0);
+    }
+
+    20% {
+        transform: translate3d(-.7rem, .3rem, 0);
+    }
+
+    40% {
+        transform: translate3d(.3rem, -.8rem, 0);
+    }
+
+    60% {
+        transform: translate3d(-.2rem, .4rem, 0);
+    }
+
+    80% {
+        transform: translate3d(.6rem, -.3rem, 0);
+    }
+
+    100% {
+        transform: translate3d(0, 0, 0);
+    }
 }

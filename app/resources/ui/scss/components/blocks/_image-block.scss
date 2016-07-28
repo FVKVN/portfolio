@@ -28,9 +28,9 @@
     min-height: 100%;
     min-width: 100%;
     height: auto;
-    width: auto;
 
     transform: translate3d(-50%, -50%, 0);
+    transition: transform .3s ease-in-out;
 }
 
 .image-block__caption {
@@ -85,6 +85,12 @@
         .image-block__title,
         .image-block__description {
             transform: translate3d(0, 0, 0);
+        }
+
+        .image-block__image {
+            transform: translate3d(-50%, -50%, 0) scale3d(1.5, 1.5, 1);
+            transition: transform 5s ease-in-out;
+
         }
     }
 

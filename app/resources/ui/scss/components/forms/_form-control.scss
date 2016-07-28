@@ -2,10 +2,50 @@
    Forms - form-control
    ========================================================================== */
 
-   .form-control__label {
-       display: block;
-   }
+.form-control__label {
+    display: block;
 
-   .form-control {
-       display: block;
-   }
+    color: $text-color;
+    margin: 1rem 0;
+
+    font-size: $font-size--base;
+    line-height: $line-height--base;
+    font-weight: 300;
+}
+
+.form-control {
+    display: block;
+    padding: 1.6rem 2rem;
+    width: 100%;
+
+    font-size: 1.8rem;
+    line-height: 1;
+    font-weight: 300;
+    color: $white;
+
+    box-shadow: none;
+
+    background: transparent;
+
+    border: .2rem solid $white;
+
+    &:focus,
+    &:active {
+        box-shadow: none;
+        outline: none;
+
+        border-color: $theme-secondary;
+
+        color: $theme-secondary;
+    }
+}
+
+.form-group {
+    .form-control__label {
+        margin-top: 0;
+    }
+
+    & + .form-group {
+        margin-top: 2rem;
+    }
+}

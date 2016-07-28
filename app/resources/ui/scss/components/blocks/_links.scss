@@ -3,11 +3,32 @@
    ========================================================================== */
 
 a {
+    position: relative;
+
     display: inline-block;
 
     color: $theme-primary;
     text-decoration: none;
 
+    &:hover,
+    &:focus,
+    &:active {
+        color: $theme-primary;
+        text-decoration: none;
+    }
+
+    &.link--disabled {
+        &:after {
+            display: none;
+        }
+
+        &:hover {
+            cursor: not-allowed;
+        }
+    }
+}
+
+a:not(.btn) {
     &:after {
         content: '';
 
@@ -20,24 +41,9 @@ a {
         transition: width .3s ease-in-out;
     }
 
-    &:hover,
-    &:focus,
-    &:active {
-        color: $theme-primary;
-        text-decoration: none;
-
+    &:hover {
         &:after {
             width: 100%;
-        }
-    }
-
-    &.link--disabled {
-        &:after {
-            display: none;
-        }
-
-        &:hover {
-            cursor: not-allowed;
         }
     }
 }
