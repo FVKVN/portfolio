@@ -19,8 +19,9 @@ fvkvn = (function($, window, undefined) {
     };
 
     init = function() {
+        fvkvn.inview();
+
         fvkvn.toggle();
-        // fvkvn.ajax();
 
         if ($('.js-parallax').length > 0) {
             fvkvn.parallaxHeader();

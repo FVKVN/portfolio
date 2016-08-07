@@ -9,6 +9,22 @@
 
 .text--white {
     color: $white !important;
+
+    a {
+        color: $white;
+
+        &:hover {
+            color: lighten($theme-primary, 30%);
+        }
+    }
+}
+
+a.text--white {
+    color: $white;
+
+    &:hover {
+        color: lighten($theme-primary, 30%);
+    }
 }
 
 .strikethrough {
@@ -22,3 +38,4 @@
 .margin--none {
     margin: 0 !important;
 }
+

@@ -40,6 +40,10 @@
     }
 }
 
+.form-control--textarea {
+    min-height: 20rem;
+}
+
 .form-group {
     .form-control__label {
         margin-top: 0;

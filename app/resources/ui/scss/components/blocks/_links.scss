@@ -72,4 +72,27 @@ a:not([class*="btn"]) {
             }
         }
     }
+
+    &:after {
+        content: none !important;
+        display: none !important;
+    }
+}
+
+.social-media__link {
+    display: inline-block;
+
+    transition: color .2s ease-in-out;
+
+    & + .social-media__link {
+        margin-left: 1rem;
+    }
+}
+
+.contact-mail {
+    transition: color .2s ease-in-out;
+
+    .contact-info__icon {
+        font-size: 1.9rem;
+    }
 }

@@ -32,7 +32,8 @@
     height: 100%;
 
     &:after {
-        content: none;
+        content: none !important;
+        display: none !important;
     }
 }
 

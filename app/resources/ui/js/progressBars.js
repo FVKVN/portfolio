@@ -10,7 +10,9 @@ fvkvn.progressBars = function() {
             var $element = $(this),
                 toValue = $element.attr('data-to');
 
-            $element.css('width', toValue + '%');
+            window.inView($element, function() {
+                $element.css('width', toValue + '%');
+            });
         });
     })();
 };

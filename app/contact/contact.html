@@ -3,6 +3,22 @@ layout: page
 title: Contact
 permalink: /contact.html
 state: active
+redirect: http://www.fvkvn.be/contact/thanks.html
+social:
+    - name: twitter
+      link: https://twitter.com/_fvkvn
+    - name: facebook
+      link: https://www.facebook.com/fvkvn/
+    - name: codepen
+      link: http://codepen.io/FVKVN/
+    - name: github
+      link: https://github.com/FVKVN
+    - name: dribbble
+      link: https://dribbble.com/FVKVN
+    - name: 500px
+      link: https://500px.com/fivekevin
+    - name: flickr
+      link: https://www.flickr.com/photos/kf-flicks/
 ---
 
 {% contentfor bodyclass %}contact no-hero{% endcontentfor %}
@@ -27,7 +43,7 @@ state: active
                 <div class="col-md-7">
                     <form action="https://getsimpleform.com/messages?form_api_token=081290cd3bd1acc9137f8ddf2897edf6" method="post">
                         <!-- the redirect_to is optional, the form will redirect to the referrer on submission -->
-                        <input type='hidden' name='redirect_to' value='/thanks.html' />
+                        <input type='hidden' name='redirect_to' value='{{ page.redirect }}' />
                         <!-- all your input fields here.... -->
                         <div class="form-group">
                             <label for="name" class="form-control__label text--white">Your name</label>
@@ -39,7 +55,7 @@ state: active
                         </div>
                         <div class="form-group">
                             <label for="Message" class="form-control__label text--white">Your message</label>
-                            <input type='textarea' name='message' class="form-control form-control--textarea"/>
+                            <textarea type='textarea' name='message' class="form-control form-control--textarea"></textarea>
                         </div>
                         <div class="form-group">
                             <input type='submit' value='Submit' class="btn btn--white"/>
@@ -48,21 +64,19 @@ state: active
 
                     </form>
                 </div>
-                <div class="col-md-5">
+                <div class="col-md-4 col-md-offset-1">
                     <h4 class="text--white">FVKVN</h4>
-                    <h5 class="text--white">{{ site.author.name }}</h5>
-                    <p class="text--white">{{ site.author.address }}</p>
-                    <p class="text--white">
-                        <a href="mailto:{{ site.author.mail }}" class="contact-mail"><i class="icon--mail contact-mail__icon"></i> {{ site.author.mail }}</a>
+                    <p class="text--white contact-info"><i class="icon--location contact-info__icon"></i> {{ site.author.address }}</p>
+                    <p class="text--white contact-info">
+                        <a href="mailto:{{ site.author.mail }}" class="contact-mail"><i class="icon--mail contact-info__icon"></i> {{ site.author.mail }}</a>
                     </p>
                     <p class="text--white">Follow, like, share, ... you know the drill:</p>
                     <p class="text--white social-media">
-                        {% for media in site.author.social %}
+                        {% for media in page.social %}
 
-                        {{ media }}
-                        <!--<a href="{{ media.link }}" class="social-media__link">-->
-                            <!--<i class="icon&#45;&#45;{{ media.name }} social-media__link__icon"></i>-->
-                        <!--</a>-->
+                        <a href="{{ media.link }}" target="_blank" class="social-media__link">
+                            <i class="icon--{{ media.name }} social-media__link__icon"></i>
+                        </a>
                         {% endfor %}
                     </p>
                 </div>
