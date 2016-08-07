@@ -196,7 +196,7 @@ gulp.task('images', function() {
 /* Fonts
  ========================================================================== */
 gulp.task('fonts', function() {
-    return gulp.src(resourcesPath + 'ui/fonts/**/*.{eot,svg,ttf,woff,woff2}')
+    return gulp.src(resourcesPath + 'ui/fonts/**/*.{eot,svg,ttf,woff,woff2,json}')
         // Set destination
         .pipe(gulp.dest(distPath + 'fonts/'));
 });

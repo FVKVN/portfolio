@@ -21,7 +21,6 @@ html {
 }
 
 body {
-    min-height: 100%;
     width: 100%;
 
     overflow: hidden;
@@ -36,17 +35,18 @@ body {
 .main-content {
     background: $white;
 
-    padding: 9rem 0 0 0;
+    padding: 7rem 0 0 0;
 
     @media (min-width: $screen-sm) {
         position: relative;
         z-index: 1;
 
-        padding: 0;
+
         margin-top: 50vh;
     }
 
     @media (min-width: $screen-md) {
+        padding: 0;
         margin-top: 100vh;
     }
 }

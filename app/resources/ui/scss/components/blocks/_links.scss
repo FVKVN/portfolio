@@ -28,7 +28,7 @@ a {
     }
 }
 
-a:not(.btn) {
+a:not([class*="btn"]) {
     &:after {
         content: '';
 
@@ -44,6 +44,32 @@ a:not(.btn) {
     &:hover {
         &:after {
             width: 100%;
+        }
+    }
+}
+
+.icon-link {
+    position: relative;
+
+    font-size: 1.6rem;
+
+    .icon-link__icon {
+        display: inline-block;
+
+        font-size: 1.4rem;
+
+        transition: transform .3s ease-in-out;
+    }
+
+    &--left {
+        .icon-link__icon {
+            margin-right: .5rem;
+        }
+
+        &:hover {
+            .icon-link__icon {
+                transform: translate3d(-.5rem, 0, 0);
+            }
         }
     }
 }

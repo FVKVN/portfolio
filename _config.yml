@@ -13,10 +13,32 @@ exclude: [resources]
 # Same as the title etc for your site but can instead be
 # called by using 'site.author.name' and so on
 author:
-  name: Kevin
-  email: fivekevin@gmail.com
+  name: Kevin Fiv&eacute;
+  mail: fivekevin@gmail.com
+  address: 9000 Ghent, Belgium
   bio: Designer developer based in Ghent Belgium.
-  twitter: https://twitter.com/_fvkvn
+  social:
+    - twitter:
+        name: twitter
+        link: https://twitter.com/_fvkvn
+    - facebook:
+        name: facebook
+        link: https://www.facebook.com/fvkvn/
+    - codepen:
+        name: codepen
+        link: http://codepen.io/FVKVN/
+    - github:
+        name: github
+        link: https://github.com/FVKVN
+    - dribbble:
+        name: dribbble
+        link: https://dribbble.com/FVKVN
+    - 500px:
+        name: 500px
+        link: https://500px.com/fivekevin
+    - flickr:
+        name: flickr
+        link: https://www.flickr.com/photos/kf-flicks/
 
 # general setting for Jekyll
 googleAnalytics: UA-XXXXX-X

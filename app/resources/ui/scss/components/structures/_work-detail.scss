@@ -7,13 +7,21 @@
         display: flex;
         flex-direction: row;
     }
+
+    overflow: hidden;
 }
 .work-detail__panel {
+    min-height: 50vh;
+    height: 100%;
+
     @media(min-width: $screen-md) {
-        min-height: calc(100vh - 5.3rem);
+        height: calc(100vh - 5.3rem);
+        overflow: auto;
     }
 
     &--visual {
+        position: relative;
+
         @include gradient--diagonal(rgba($theme-primary, .7), rgba($theme-secondary, .7));
 
         @media(min-width: $screen-md) {
@@ -40,4 +48,8 @@
 
 .work-detail__panel__title {
     font-size: 5rem;
+}
+
+.work-detail__panel__sub-title {
+    font-size: 1.8rem;
 }

@@ -15,7 +15,7 @@ state: active
                 <div class="col-md-12">
                     <h1 class="page-title">{{ page.title }}</h1>
                     <p>
-                        Feel free to drop a line using the form or contact me using the social media links
+                        Feel free to drop a line using the form or contact me using the provided contact information.
                     </p>
                 </div>
             </div>
@@ -46,9 +46,25 @@ state: active
                         </div>
 
 
-
-
                     </form>
+                </div>
+                <div class="col-md-5">
+                    <h4 class="text--white">FVKVN</h4>
+                    <h5 class="text--white">{{ site.author.name }}</h5>
+                    <p class="text--white">{{ site.author.address }}</p>
+                    <p class="text--white">
+                        <a href="mailto:{{ site.author.mail }}" class="contact-mail"><i class="icon--mail contact-mail__icon"></i> {{ site.author.mail }}</a>
+                    </p>
+                    <p class="text--white">Follow, like, share, ... you know the drill:</p>
+                    <p class="text--white social-media">
+                        {% for media in site.author.social %}
+
+                        {{ media }}
+                        <!--<a href="{{ media.link }}" class="social-media__link">-->
+                            <!--<i class="icon&#45;&#45;{{ media.name }} social-media__link__icon"></i>-->
+                        <!--</a>-->
+                        {% endfor %}
+                    </p>
                 </div>
             </div>
         </div>
