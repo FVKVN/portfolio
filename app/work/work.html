@@ -31,7 +31,7 @@ state: active
             {% if node.layout == "work-detail" %}
             <a href="{{ node.url }}" class="flex-item flex-item--work image-block__link js-filter-item js-ajax-link" data-filter-category="{{ node.categories }}">
                 <figure class="image-block">
-                    <img src="../img/projects/{{ node.img_folder}}/{{ node.thumb_img}}" alt="" class="image-block__image">
+                    <img src="../frontend/img/projects/{{ node.img_folder}}/{{ node.thumb_img}}" alt="" class="image-block__image">
                     <figcaption class="image-block__caption">
                         <h4 class="image-block__title">{{ node.title }}</h4>
                         <p class="image-block__description">{{ node.description }}</p>

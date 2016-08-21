@@ -1,0 +1,40 @@
+/* ==========================================================================
+   services
+   ========================================================================== */
+
+.services {
+    & + .services {
+        margin-top: 5rem;
+    }
+}
+
+.services__title {
+    text-align: center;
+
+    @media(min-width: $screen-sm) {
+        margin-top: 0;
+
+        text-align: left;
+    }
+}
+
+.services__description {
+    text-align: center;
+
+    @media(min-width: $screen-sm) {
+        text-align: left;
+    }
+}
+
+.services__visual {
+    margin: 0 auto;
+    display: block;
+    width: 100%;
+    max-width: 20rem;
+
+    @media(min-width: $screen-sm) {
+        margin: 0;
+        width: 100%;
+        height: auto;
+    }
+}

@@ -7,8 +7,6 @@ var gulp = require('gulp'),
     del = require('del'),
     fs = require('fs'),
     path = require('path'),
-    _ = require('lodash'),
-    through = require('through2'),
     rebase = require('rebase/tasks/gulp-rebase'),
     notifier = require('node-notifier'),
     runSequence = require('run-sequence'),
@@ -94,7 +92,7 @@ gulp.task('styles', function() {
         }))
 
         // Write to output
-        .pipe(gulp.dest(distPath + 'css/'));
+        .pipe(gulp.dest(distPath + 'frontend/css/'));
 });
 
 /* Javascript
@@ -128,13 +126,13 @@ gulp.task('scripts-prod', ['jshint'], function() {
         .pipe(plugins.rev())
 
         // Set destination
-        .pipe(gulp.dest(distPath + 'js/'));
+        .pipe(gulp.dest(distPath + 'frontend/js/'));
 });
 
 gulp.task('inject-prod-scripts', ['scripts-prod'], function() {
     return gulp.src('./app/_includes/js_footer.html')
         // Inject
-        .pipe(plugins.inject(gulp.src(distPath + '/js/*.js'), {
+        .pipe(plugins.inject(gulp.src(distPath + 'frontend/js/*.js'), {
             transform: addAsyncTag,
             ignorePath: '/web'
         }))
@@ -151,7 +149,7 @@ gulp.task('scripts-dev', ['jshint'], function() {
         .pipe(plugins.flatten())
 
         // Write
-        .pipe(gulp.dest(distPath + 'js/'));
+        .pipe(gulp.dest(distPath + 'frontend/js/'));
 });
 
 gulp.task('inject-dev-scripts', ['scripts-dev'], function() {
@@ -164,7 +162,7 @@ gulp.task('inject-dev-scripts', ['scripts-dev'], function() {
         // Rebase
         .pipe(rebase({
             script: {
-                '(\/[^"]*\/)': '/js/'
+                '(\/[^"]*\/)': '/frontend/js/'
             }
         }))
 
@@ -176,7 +174,7 @@ gulp.task('inject-dev-scripts', ['scripts-dev'], function() {
 gulp.task('images', function() {
     return gulp.src(resourcesPath + 'ui/img/**/*.{png,jpg,jpeg,gif,svg,webp}')
         // Only optimize changed images
-        .pipe(plugins.changed(distPath + 'img/'))
+        .pipe(plugins.changed(distPath + 'frontend/img/'))
 
         // Imagemin
         .pipe(plugins.imagemin({
@@ -188,7 +186,7 @@ gulp.task('images', function() {
         }))
 
         // Set destination
-        .pipe(gulp.dest(distPath + 'img/'));
+        .pipe(gulp.dest(distPath + 'frontend/img/'));
 });
 
 
@@ -198,12 +196,12 @@ gulp.task('images', function() {
 gulp.task('fonts', function() {
     return gulp.src(resourcesPath + 'ui/fonts/**/*.{eot,svg,ttf,woff,woff2,json}')
         // Set destination
-        .pipe(gulp.dest(distPath + 'fonts/'));
+        .pipe(gulp.dest(distPath + 'frontend/fonts/'));
 });
 
 /* Clean/clear
  ========================================================================== */
-gulp.task('clean', del.bind(null, ['web']));
+gulp.task('clean', del.bind(null, ['web/frontend/']));
 
 /* Browsersync
  ========================================================================== */
@@ -215,7 +213,7 @@ gulp.task('serve:dev', function () {
     });
 
     gulp.watch(['./app/**/*.md', './app/**/*.html', './app/**/*.xml', './app/**/*.txt'], ['styles', 'images','inject-dev-scripts', 'jekyll-rebuild']);
-    gulp.watch([distPath + 'css/*.css'], browserSync.reload);
+    gulp.watch([distPath + 'frontend/css/*.css'], browserSync.reload);
     gulp.watch([resourcesPath + 'ui/scss/**/*.scss'], ['styles']);
     gulp.watch([resourcesPath + 'ui/js/**/*.js'], ['inject-dev-scripts']);
     gulp.watch([resourcesPath + 'ui/img/**/*.{png,jpg,jpeg,gif,svg,webp}'], ['images']);

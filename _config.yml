@@ -3,18 +3,20 @@
 title: fvkvn
 description: portfolio
 tagline: portfolio
-url: localhost:4000
+url: www.fvkvn.be
+dev_url: localhost:3000
 
 # Used so Jekyll outputs the site correctly so Gulp can do what it wants
 source: app
 destination: web
 exclude: [resources]
+keep_files: [web/icons/*]
 
 # Same as the title etc for your site but can instead be
 # called by using 'site.author.name' and so on
 author:
   name: Kevin Fiv&eacute;
-  mail: fivekevin@gmail.com
+  mail: kevin@fvkvn.be
   address: 9000 Ghent, Belgium
   bio: Designer developer based in Ghent Belgium.
 
