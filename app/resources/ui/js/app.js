@@ -21,15 +21,15 @@ fvkvn = (function($, window, undefined) {
     init = function() {
         fvkvn.inview();
 
-        fvkvn.toggle();
+        fvkvn.header();
 
         if ($('.js-parallax').length > 0) {
             fvkvn.parallaxHeader();
         }
 
-        if ($('.js-filter').length > 0) {
-            fvkvn.filter();
-        }
+        //if ($('.js-filter').length > 0) {
+        //    fvkvn.filter();
+        //}
 
         if ($('.js-progress-bar').length > 0) {
             fvkvn.progressBars();
