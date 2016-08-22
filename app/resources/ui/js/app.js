@@ -20,10 +20,9 @@ fvkvn = (function($, window, undefined) {
 
     init = function() {
         fvkvn.inview();
-
         fvkvn.header();
-
         fvkvn.anchorLinks();
+        fvkvn.spyScroll();
 
         if ($('.js-parallax').length > 0) {
             fvkvn.parallaxHeader();

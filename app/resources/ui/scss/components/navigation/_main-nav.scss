@@ -58,8 +58,33 @@
     height: 5rem;
 }
 
-.main-nav__item {
+.nav__list {
+    padding: 0;
+    margin: 0;
+
+    line-height: 1;
+}
+
+.nav__list__item {
     display: inline-block;
+    padding: 0;
+
+    list-style: none;
+
+    & + .nav__list__item {
+        margin-left: 1.5rem;
+    }
+
+    &.active {
+        .nav__link:after {
+            width: 100%;
+        }
+    }
+
+
+}
+
+.nav__link {
     padding: 1.5rem 0;
 
     text-decoration: none;
@@ -80,7 +105,5 @@
         color: rgba($theme-primary, .3);
     }
 
-    & + .main-nav__item {
-        margin-left: 1.5rem;
-    }
+
 }

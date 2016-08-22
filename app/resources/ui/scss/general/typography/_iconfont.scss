@@ -10,7 +10,6 @@
    font-family: '#{$iconfont-name}';
    src:url('#{$iconfont-path}/icomoon.eot?#{$iconfont-ref}');
    src:url('#{$iconfont-path}/icomoon.eot?#{$iconfont-ref}#iefix') format('embedded-opentype'),
-   url('#{$iconfont-path}/icomoon.woff2?#{$iconfont-ref}') format('woff2'),
    url('#{$iconfont-path}/icomoon.ttf?#{$iconfont-ref}') format('truetype'),
    url('#{$iconfont-path}/icomoon.woff?#{$iconfont-ref}') format('woff'),
    url('#{$iconfont-path}/icomoon.svg?#{$iconfont-ref}#icomoon') format('svg');
