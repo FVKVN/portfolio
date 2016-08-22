@@ -19,10 +19,12 @@
 }
 
 .services__description {
-    text-align: center;
+    p {
+        margin: 0;
 
-    @media(min-width: $screen-sm) {
-        text-align: left;
+        & + p {
+            margin-top: 2rem;
+        }
     }
 }
 

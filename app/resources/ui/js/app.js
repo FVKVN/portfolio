@@ -23,6 +23,8 @@ fvkvn = (function($, window, undefined) {
 
         fvkvn.header();
 
+        fvkvn.anchorLinks();
+
         if ($('.js-parallax').length > 0) {
             fvkvn.parallaxHeader();
         }
