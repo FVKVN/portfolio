@@ -1,18 +1,29 @@
 var fvkvn = fvkvn || {};
 
 fvkvn.pageTransitions = function() {
-    var init, _animateSvg;
+    var init, _animateSvg, _animateSvgIn, _animateSvgOut, _clickHandler, _changePage;
+
+    var $body = $('body');
 
     //svg config
     var $svgHolder = $('.js-trans-overlay'),
-        _shapes = $('.js-trans-overlay svg > g polygon'),
+        _shapes = $('.js-trans-overlay > g polygon'),
         _stagger = 0.00475,
-        _duration = 1.5;
+        _duration = 2;
 
-    _animateSvgIn = function() {
+    //ajax setup
+    var $hook = $('.js-ajax-link'),
+        _isAnimating = false;
+
+    _animateSvgIn = function(target) {
+        _isAnimating = true;
+
         var _options = {
-                delay: 0.2, // init pause time
-                onComplete: _animateSvgOut
+                delay: 0,
+                onComplete: function() {
+                    _isAnimating = false;
+                    _changePage(target, true);
+                }
             },
             _tmaxTl = new TimelineMax(_options);
 
@@ -30,14 +41,23 @@ fvkvn.pageTransitions = function() {
 
         $svgHolder.css('z-index', 900);
 
-        _tmaxTl.staggerFromTo(_shapes, _duration, polygon_staggerFrom, polygon_staggerTo, _stagger, 0);
+        _animateSvg(_tmaxTl, polygon_staggerFrom, polygon_staggerTo);
     };
 
     _animateSvgOut = function() {
+        _isAnimating = true;
+
         var _options = {
-                delay: 0.2, // init pause time
+                delay: 0.5, // init pause time
                 onComplete: function() {
                     $svgHolder.css('z-index', -1);
+                    _isAnimating = false;
+
+                    if ($body.hasClass('homepage')) {
+                        $body.removeClass('homepage')
+                    } else {
+                        $body.addClass('homepage')
+                    }
                 }
             },
             _tmaxTl = new TimelineMax(_options);
@@ -54,10 +74,41 @@ fvkvn.pageTransitions = function() {
             transformOrigin: 'center center'
         };
 
-        _tmaxTl.staggerFromTo(_shapes, _duration, polygon_staggerFrom, polygon_staggerTo, _stagger, 0);
+        _animateSvg(_tmaxTl, polygon_staggerFrom, polygon_staggerTo);
+    };
+
+    _animateSvg = function(timeline, from, to) {
+        timeline.staggerFromTo(_shapes, _duration, from, to, _stagger, 0);
+    };
+
+    _changePage = function(url, bool) {
+        var newSectionName = 'ajax-content-' + url.replace('.html', ''),
+            newSection = $('<div class="' + newSectionName + '"> </div>');
+
+        newSection.load(url + ' .js-ajax-content-wrapper > *', function(e) {
+            $('.js-ajax-content-wrapper').html(newSection);
+            fvkvn.init();
+            _animateSvgOut();
+        });
+
+        if(url !== window.location) {
+            window.history.pushState({path: url}, '', url);
+        }
+    };
+
+    _clickHandler = function(e) {
+        e.preventDefault();
+
+        var $element = $(this),
+            target = $element.attr('href');
+
+        if(!_isAnimating) {
+            _animateSvgIn(target);
+        }
+
     };
 
     init = (function() {
-        _animateSvgIn();
+        $hook.on('click', _clickHandler);
     })();
 };

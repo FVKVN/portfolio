@@ -18,16 +18,20 @@ fvkvn.header = function() {
     };
 
     init = (function() {
-        _lastKnownScrollY = document.documentElement.scrollTop || document.body.scrollTop;
-        _lastKnownDistance = $target.offset().top - _lastKnownScrollY - $element.height();
-
-        $window.on('scroll touchmove touchstart', function() {
+        if ($target.length > 0) {
             _lastKnownScrollY = document.documentElement.scrollTop || document.body.scrollTop;
             _lastKnownDistance = $target.offset().top - _lastKnownScrollY - $element.height();
 
-            requestAnimationFrame(_update);
-        });
+            $window.on('scroll touchmove touchstart', function() {
+                _lastKnownScrollY = document.documentElement.scrollTop || document.body.scrollTop;
+                _lastKnownDistance = $target.offset().top - _lastKnownScrollY - $element.height();
 
-        _update();
+                requestAnimationFrame(_update);
+            });
+
+            _update();
+        }
+
+
     })();
 };

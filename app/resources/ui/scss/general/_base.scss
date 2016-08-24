@@ -40,26 +40,26 @@ body {
 
     padding: 7rem 0 0 0;
 
-    @media (min-width: $screen-sm) {
-        position: relative;
-        z-index: 1;
-
-
-        margin-top: 50vh;
-    }
-
     @media (min-width: $screen-md) {
         padding: 0;
-        margin-top: 100vh;
     }
 }
 
-.no-hero {
+.homepage {
     .main-content {
-        margin: 0 !important;
+        @media (min-width: $screen-sm) {
+            position: relative;
+            z-index: 1;
+
+            margin-top: 50vh;
+        }
+
+        @media (min-width: $screen-md) {
+            padding: 0;
+            margin-top: 100vh;
+        }
     }
 }
-
 
 
 /* Figures

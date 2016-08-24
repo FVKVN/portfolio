@@ -11,6 +11,7 @@ var gulp = require('gulp'),
     notifier = require('node-notifier'),
     runSequence = require('run-sequence'),
     browserSync = require('browser-sync').create(),
+    rsync = require('gulp-rsync'),
     plugins = require('gulp-load-plugins')();
 
 // Gulp Config
@@ -133,7 +134,7 @@ gulp.task('scripts-prod', ['jshint'], function() {
 gulp.task('inject-prod-scripts', ['scripts-prod'], function() {
     return gulp.src('./app/_includes/js_footer.html')
         // Inject
-        .pipe(plugins.inject(gulp.src(distPath + 'frontend/js/*.js'), {
+        .pipe(plugins.inject(gulp.src(distPath + 'frontend/js/ .'), {
             transform: addAsyncTag,
             ignorePath: '/web'
         }))
@@ -230,4 +231,38 @@ gulp.task('default', function(done) {
         ['styles', 'images', 'fonts', 'inject-dev-scripts'],
         'serve:dev',
     done);
+});
+
+gulp.task('build', function(done) {
+    runSequence(
+        'clean',
+        'jekyll:prod',
+        ['styles', 'images', 'fonts', 'inject-prod-scripts'],
+        done);
+});
+
+gulp.task('deploy', function() {
+
+    // Dirs and Files to sync
+    var rsyncPaths = ['./web' ];
+
+    // Default options for rsync
+    var rsyncConf = {
+        progress: true,
+        incremental: true,
+        relative: true,
+        emptyDirectories: true,
+        recursive: true,
+        clean: true,
+        exclude: [],
+        hostname: 'www.fvkvn.be',
+        username: 'fvkvn',
+        destination: '/www/fvkvn.be/current/web'
+    };
+
+    // Staging
+
+    // Use gulp-rsync to sync the files
+    return gulp.src(rsyncPaths)
+        .pipe(rsync(rsyncConf));
 });
