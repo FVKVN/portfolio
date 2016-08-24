@@ -10,6 +10,7 @@ dev_url: localhost:3000
 source: app
 destination: web
 exclude: [resources]
+include: [.htpasswd]
 keep_files: [web/icons/*]
 
 # Same as the title etc for your site but can instead be

@@ -132,15 +132,22 @@ gulp.task('scripts-prod', ['jshint'], function() {
 });
 
 gulp.task('inject-prod-scripts', ['scripts-prod'], function() {
-    return gulp.src('./app/_includes/js_footer.html')
+    var file = gulp.src(distPath + 'frontend/js/*.js');
+
+    return gulp.src(distPath + '**/*.html')
         // Inject
-        .pipe(plugins.inject(gulp.src(distPath + 'frontend/js/ .'), {
-            transform: addAsyncTag,
-            ignorePath: '/web'
+        .pipe(plugins.inject(file), {
+            transform: addAsyncTag
+        })
+
+        .pipe(rebase({
+            script: {
+                '(\/[^"]*\/)': '/frontend/js/'
+            }
         }))
 
         // Write
-        .pipe(gulp.dest(resourcesPath + 'app/_includes/js_footer.html'));
+        .pipe(gulp.dest(distPath));
 });
 
 
@@ -256,8 +263,8 @@ gulp.task('deploy', function() {
         clean: true,
         exclude: [],
         hostname: 'www.fvkvn.be',
-        username: 'fvkvn',
-        destination: '/www/fvkvn.be/current/web'
+        username: 'deploy',
+        destination: '/www/fvkvn.be/current/'
     };
 
     // Staging
