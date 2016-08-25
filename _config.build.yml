@@ -12,6 +12,9 @@ lsi: true
 # Removes the upper limit for posts generated
 limit_posts: 0
 
-source: 'app'
-destination: 'web'
+source: app
+destination: web
+
+exclude: [resources, about, blog]
+
 

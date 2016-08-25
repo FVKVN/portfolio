@@ -48,7 +48,7 @@ fvkvn.pageTransitions = function() {
         _isAnimating = true;
 
         var _options = {
-                delay: 0.5, // init pause time
+                delay: 1, // init pause time
                 onComplete: function() {
                     $svgHolder.css('z-index', -1);
                     _isAnimating = false;

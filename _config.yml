@@ -9,7 +9,7 @@ dev_url: localhost:3000
 # Used so Jekyll outputs the site correctly so Gulp can do what it wants
 source: app
 destination: web
-exclude: [resources]
+exclude: [resources, about, blog]
 include: [.htpasswd]
 keep_files: [web/icons/*]
 
