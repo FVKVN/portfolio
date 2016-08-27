@@ -3,8 +3,8 @@
 title: fvkvn
 description: portfolio
 tagline: portfolio
-url: www.fvkvn.be
-dev_url: localhost:3000
+url: http://localhost:3000
+dev_url: http://localhost:3000
 
 # Used so Jekyll outputs the site correctly so Gulp can do what it wants
 source: app

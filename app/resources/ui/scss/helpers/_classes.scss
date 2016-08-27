@@ -12,10 +12,6 @@
 
     a {
         color: $white;
-
-        &:hover {
-            color: lighten($theme-primary, 30%);
-        }
     }
 }
 

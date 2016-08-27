@@ -3,7 +3,8 @@ var fvkvn = fvkvn || {};
 fvkvn.pageTransitions = function() {
     var init, _animateSvg, _animateSvgIn, _animateSvgOut, _clickHandler, _changePage;
 
-    var $body = $('body');
+    var $body = $('body'),
+        $window = $('window');
 
     //svg config
     var $svgHolder = $('.js-trans-overlay'),
@@ -48,16 +49,10 @@ fvkvn.pageTransitions = function() {
         _isAnimating = true;
 
         var _options = {
-                delay: 1, // init pause time
+                delay: 2, // init pause time
                 onComplete: function() {
                     $svgHolder.css('z-index', -1);
                     _isAnimating = false;
-
-                    if ($body.hasClass('homepage')) {
-                        $body.removeClass('homepage')
-                    } else {
-                        $body.addClass('homepage')
-                    }
                 }
             },
             _tmaxTl = new TimelineMax(_options);
@@ -87,13 +82,46 @@ fvkvn.pageTransitions = function() {
 
         newSection.load(url + ' .js-ajax-content-wrapper > *', function(e) {
             $('.js-ajax-content-wrapper').html(newSection);
-            fvkvn.init();
+
+            if ($body.hasClass('homepage')) {
+                $body.removeClass('homepage')
+            } else {
+                $body.addClass('homepage')
+            }
+
+            fvkvn.inview();
+            fvkvn.header();
+            fvkvn.anchorLinks();
+            fvkvn.spyScroll();
+            fvkvn.pageTransitions();
+            fvkvn.progressBars();
+            fvkvn.sliders();
+
+            var hash = url.split('#');
+
+            if (hash[1] !== undefined) {
+                $('html,body').animate({
+                    scrollTop: $('#' + hash[1]).offset().top
+                });
+
+                $('html, body').stop().animate({
+                    'scrollTop': $('#' + hash[1]).offset().top
+                });
+            }
+
             _animateSvgOut();
+
         });
+
+
 
         if(url !== window.location) {
             window.history.pushState({path: url}, '', url);
         }
+
+
+
+
     };
 
     _clickHandler = function(e) {

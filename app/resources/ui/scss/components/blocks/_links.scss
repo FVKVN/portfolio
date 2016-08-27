@@ -79,13 +79,18 @@ a:not([class*="btn"]) {
     }
 }
 
-.social-media__link {
+.social-media__link,
+.contact-mail {
     display: inline-block;
 
     transition: color .2s ease-in-out;
 
     & + .social-media__link {
         margin-left: 1rem;
+    }
+
+    &:hover {
+        color: $theme-secondary;
     }
 }
 

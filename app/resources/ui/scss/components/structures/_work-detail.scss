@@ -6,6 +6,8 @@
     @media(min-width: $screen-md) {
         display: flex;
         flex-direction: row;
+        align-items: stretch;
+        align-content: stretch;
     }
 
     overflow: hidden;
@@ -15,8 +17,11 @@
     height: 100%;
 
     @media(min-width: $screen-md) {
-        height: calc(100vh - 5.3rem);
+        min-height: calc(100vh - 5.3rem);
         overflow: auto;
+        flex: 1 1 auto;
+
+        height: auto;
     }
 
     &--visual {
