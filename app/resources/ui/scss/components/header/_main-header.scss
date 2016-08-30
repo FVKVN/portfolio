@@ -11,20 +11,15 @@
     padding: 1rem 2rem;
     width: 100%;
 
-    background: $theme-primary;
+    background: transparent;
 
     transform: translate3d(0, -100%, 0);
     transition: transform .3s ease-in-out, background .3s ease-in-out;
 
-    @media(min-width: $screen-md) {
-        background: transparent;
-    }
 }
 
 .main-header--solid {
-    @media(min-width: $screen-md) {
-        background: $theme-secondary;
-    }
+    background: $white;
 }
 
 .polygon-animation-done {
@@ -47,12 +42,9 @@
     height: 100%;
 
     #logo {
-        fill: $theme-secondary;
+        fill: $theme-primary;
         transition: fill .3s ease-in-out;
 
-        @media(min-width: $screen-md) {
-            fill: $theme-primary;
-        }
     }
 
     &:hover {

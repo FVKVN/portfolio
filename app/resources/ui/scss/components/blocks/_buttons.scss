@@ -247,3 +247,28 @@
         margin: 1rem;
     }
 }
+
+.btn--scroll-down {
+    position: absolute;
+    bottom: 5rem;
+    left: 50%;
+    z-index: 1;
+
+    display: block;
+    padding: 1.5rem;
+    height: 5rem;
+    width: 5rem;
+
+    line-height: 1;
+    font-size: 2rem;
+    color: $theme-secondary;
+
+    transform: translate3d(-50%, 0, 0);
+
+    background: transparent;
+
+    box-shadow: none;
+    outline: none;
+
+    border: .2rem solid $theme-secondary;
+}

@@ -77,6 +77,8 @@
 
     &.active {
         .nav__link:after {
+            background: $theme-primary;
+
             width: 100%;
         }
     }

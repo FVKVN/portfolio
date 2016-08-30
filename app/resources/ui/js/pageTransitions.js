@@ -107,6 +107,10 @@ fvkvn.pageTransitions = function() {
                 $('html, body').stop().animate({
                     'scrollTop': $('#' + hash[1]).offset().top
                 });
+            } else {
+                $('html,body').animate({
+                    scrollTop: 0
+                });
             }
 
             _animateSvgOut();

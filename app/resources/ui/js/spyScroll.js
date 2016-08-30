@@ -1,11 +1,17 @@
 var fvkvn = fvkvn || {};
 
 fvkvn.spyScroll = function() {
-    var init;
+    var init,
+        $body = $('body');
 
     init = (function() {
-        $('body').scrollspy({
-            target: '#main-nav'
-        });
+        if ($body.hasClass('homepage')) {
+            $body.scrollspy({
+                target: '#main-nav'
+            });
+        } else {
+            $('.nav__list__item').removeClass('active');
+        }
+
     })();
 };
