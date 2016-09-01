@@ -7,7 +7,7 @@ fvkvn.pageTransitions = function() {
         $window = $('window');
 
     //svg config
-    var $svgHolder = $('.js-trans-overlay'),
+    var $svgHolder = $('.js-trans-overlay-container'),
         _shapes = $('.js-trans-overlay > g polygon'),
         _stagger = 0.00475,
         _duration = 2;

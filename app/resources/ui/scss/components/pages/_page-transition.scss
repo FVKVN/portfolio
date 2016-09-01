@@ -2,7 +2,7 @@
    pages - page transition
    ========================================================================== */
 
-.trans-overlay {
+.trans-overlay-container {
     position: fixed;
     top: 0;
     left: 0;
@@ -13,6 +13,13 @@
     height: 100%;
 
     z-index: -9;
+}
+
+.trans-overlay {
+
+    min-width: 150%;
+    min-height: 150%;
+
 
     polygon {
         fill: $white;

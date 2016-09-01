@@ -3,10 +3,13 @@
    ========================================================================== */
 
 .main-footer {
+    position: relative;
+    z-index: 1;
+
     padding: 2rem;
 
     // @include gradient--diagonal(rgba($theme-primary, 1), rgba($theme-secondary, 1));
-    background: $theme-secondary;
+    background: $white;
 
 
     p {
