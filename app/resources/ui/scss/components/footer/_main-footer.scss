@@ -9,7 +9,7 @@
     padding: 2rem;
 
     // @include gradient--diagonal(rgba($theme-primary, 1), rgba($theme-secondary, 1));
-    background: $white;
+    background: $theme-primary--darker;
 
 
     p {
@@ -17,7 +17,7 @@
 
         font-size: 1.3rem;
         line-height: 1;
-        color: $theme-primary;
+        color: $theme-primary--light;
     }
 
 }

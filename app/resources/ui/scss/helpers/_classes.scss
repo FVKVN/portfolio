@@ -12,6 +12,20 @@
 
     a {
         color: $white;
+
+
+    }
+}
+
+.text--theme-secondary {
+    color: $theme-secondary;
+
+    a {
+        color: $theme-secondary;
+
+        &:hover {
+            color: $theme-primary--dark;
+        }
     }
 }
 

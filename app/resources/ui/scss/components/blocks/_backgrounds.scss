@@ -5,21 +5,26 @@
 // @todo: move this to helper classes
 
 .background--grey {
-    background-color: $grey--light;
+    background-color: $grey--lightest;
 }
-
-.background--grey--dark {
-    background-color: $blue--darkest;
-}
-
 .background--white {
     background-color: $white;
 }
 
 .background--theme-primary {
-    background-color: $theme-primary;
+    background-color: $theme-primary--lighter;
 }
 
-.background--secondary {
-    background-color: $theme-secondary;
+.background--theme-secondary {
+    background-color: $theme-secondary--lighter;
+
+    p,
+    h2,
+    h3 {
+        color: $theme-primary--light !important;
+
+        strong {
+            color: $theme-primary;
+        }
+    }
 }

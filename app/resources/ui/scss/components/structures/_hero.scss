@@ -87,7 +87,7 @@ svg.hero__visual > g polygon {
 
 .hero__title {
     position: absolute;
-    top: calc(50% + 3.5rem);
+    bottom: 10rem;
     left: 50%;
 
     padding: 2rem;
@@ -95,7 +95,7 @@ svg.hero__visual > g polygon {
 
     opacity: 0;
 
-    transform: translate3d(-50%, -30%, 0);
+    transform: translate3d(-50%, 0, 0);
 
     text-align: center;
 
@@ -113,10 +113,6 @@ svg.hero__visual > g polygon {
 
     h2 {
         margin-bottom: 0;
-    }
-
-    @media (min-width: $screen-md) {
-        top: 50%;
     }
 
 }

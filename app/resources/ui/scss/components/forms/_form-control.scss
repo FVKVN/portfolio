@@ -5,7 +5,7 @@
 .form-control__label {
     display: block;
 
-    color: $text-color;
+    color: $theme-secondary;
     margin: 1rem 0;
 
     font-size: $font-size--base;
@@ -21,22 +21,22 @@
     font-size: 1.8rem;
     line-height: 1;
     font-weight: 300;
-    color: $white;
+    color: $theme-primary;
 
     box-shadow: none;
 
     background: transparent;
 
-    border: .2rem solid $white;
+    border: .2rem solid $theme-secondary;
 
     &:focus,
     &:active {
         box-shadow: none;
         outline: none;
 
-        border-color: $theme-secondary;
+        border-color: $white;
 
-        color: $theme-secondary;
+        color: $white;
     }
 }
 

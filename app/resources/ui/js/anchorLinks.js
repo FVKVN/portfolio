@@ -7,6 +7,8 @@ fvkvn.anchorLinks = function() {
 
     init = (function() {
         $hook.on('click', function(e) {
+            e.preventDefault();
+
             var $target = $($(this).attr('href'));
 
             $('html, body').stop().animate({

@@ -60,6 +60,8 @@
 
     transition: border .2s ease-in-out, transform .2s ease-in-out;
 
+    background: transparent;
+
     &:hover {
         border-bottom: .5rem solid;
         transform: translate3d(0, -.3rem, 0);
@@ -87,6 +89,12 @@
     border-color: $theme-secondary;
 
     color: $theme-secondary;
+
+    &:focus,
+    &:active,
+    &:hover {
+        color: $theme-secondary;
+    }
 }
 
 .btn--white {
@@ -263,8 +271,10 @@
     font-size: 2rem;
     color: $theme-primary;
 
-    transform: translate3d(-50%, -100%, 0);
-    transition: transform .3s ease-in-out;
+    opacity: 0;
+
+    transform: translate3d(-50%, 100%, 0);
+    transition: transform .3s ease-in-out, opacity .3s ease-in-out;
 
     background: transparent;
 
@@ -273,34 +283,103 @@
 
     //border: .2rem solid $theme-secondary;
 
+    &:hover {
+        &:after {
+            transform: scale3d(1.5, 1.5, 1) rotate3d(0,0,1,45deg);
+
+            animation: none;
+        }
+
+        &:before {
+            opacity: 1;
+            transform: scale3d(1,1,1);
+        }
+    }
+
+    &:active,
+    &:focus {
+        &:before {
+            animation: zoom-out .3s ease-in-out 1;
+        }
+
+        &:after {
+            animation: rotate-out .3s ease-in-out 1;
+        }
+    }
+
+    &:before,
     &:after {
         content: '';
+
+        position: absolute;
+        top: 0;
+        left: 0;
 
         display: block;
         height: 5rem;
         width: 5rem;
 
         border: .2rem solid $theme-primary;
+    }
 
+    &:before {
+        opacity: 0;
+
+        transition: all .3s ease-in-out;
+        transform: scale3d(1.5, 1.5, 1);
+    }
+
+    &:after {
         transform: rotate3d(0,0,1,45deg);
 
-        //animation: rotate .5s ease-in-out infinite;
+        transition: all .3s ease-in-out;
+        animation: rotate 6s ease-in-out;
+        animation-iteration-count: infinite;
     }
 }
 
 .polygon-animation-done {
     .btn--scroll-down {
         transform: translate3d(-50%, 0, 0);
+        opacity: 1;
     }
 }
 
 @keyframes rotate {
     0% {
-        transform: rotate3d(0,0,1,0);
+        transform: rotate3d(0,0,1,45deg);
     }
 
+    5% {
+        transform: rotate3d(0,0,1,0deg);
+    }
+
+    10% {
+        transform: rotate3d(0,0,1,270deg);
+    }
+
+    15%, 100% {
+        transform: rotate3d(0,0,1,225deg);
+    }
+}
+
+@keyframes zoom-out {
+    0% {
+        transform: scale3d(1,1,1);
+        opacity: 1;
+    }
     100% {
-        transform: rotate3d(0,0,1,180deg);
+        transform: scale3d(3,3,1);
+        opacity: 0;
+    }
+}
+
+@keyframes rotate-out {
+    0% {
+        transform: scale3d(1.5, 1.5, 1) rotate3d(0,0,1,45deg);
+    }
+    100% {
+        transform: scale3d(1, 1, 1) rotate3d(0,0,1,225deg);
     }
 }
 
