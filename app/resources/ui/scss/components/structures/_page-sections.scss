@@ -6,11 +6,13 @@
     padding: 3rem 1.5rem;
 
     @media (min-width: $screen-md) {
-        padding: 5rem;
+        padding: 10rem;
     }
 
-    @media (min-width: $screen-md) {
-        padding: 10rem;
+    @media (max-width: $screen-md) {
+        div[class^="col-md-"] + div[class^="col-md-"] {
+            margin-top: 3rem;
+        }
     }
 }
 

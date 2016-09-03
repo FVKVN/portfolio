@@ -4,18 +4,18 @@
 
 .services {
     & + .services {
-        margin-top: 5rem;
+        margin-top: 3rem;
+
+        @media(min-width: $screen-sm) {
+            margin-top: 5rem;
+        }
     }
 }
 
 .services__title {
-    text-align: center;
+    margin-top: 0;
 
-    @media(min-width: $screen-sm) {
-        margin-top: 0;
-
-        text-align: left;
-    }
+    text-align: left;
 }
 
 .services__description {
@@ -29,14 +29,13 @@
 }
 
 .services__visual {
-    margin: 0 auto;
     display: block;
     width: 100%;
-    max-width: 20rem;
+    max-width: 10rem;
+    height: auto;
 
     @media(min-width: $screen-sm) {
-        margin: 0;
-        width: 100%;
-        height: auto;
+        margin: 0 auto;
+        max-width: 20rem;
     }
 }

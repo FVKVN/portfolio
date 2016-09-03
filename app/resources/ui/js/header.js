@@ -5,13 +5,16 @@ fvkvn.header = function() {
 
     var $element = $('.js-header'),
         $window = $(window),
-        _lastKnownScrollY = 0;
+        _lastKnownScrollY = 0,
+        $anchorBtn = $('.js-hero-anchor');
 
     _update = function() {
         if (_lastKnownScrollY >= 100) {
             $element.addClass('main-header--solid');
+            $anchorBtn.removeClass('animating');
         } else {
             $element.removeClass('main-header--solid');
+            $anchorBtn.addClass('animating');
         }
     };
 

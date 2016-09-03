@@ -12,9 +12,13 @@
     }
 
     .hero__title {
-        transform: translate3d(-50%, 0, 0);
-
         opacity: 1;
+
+        @media (min-width: $screen-sm) {
+            transform: translate3d(-50%, 0, 0);
+
+
+        }
     }
 
     body {

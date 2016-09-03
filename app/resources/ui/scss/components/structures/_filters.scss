@@ -5,6 +5,7 @@
 .filters__wrapper {
     position: fixed;
     bottom: 0;
+    z-index: 50;
 
     width: 100%;
 
@@ -31,17 +32,38 @@ text-align: center;
 
 .filters__wrapper__icon {
     position: absolute;
-    top: -7rem;
+    top: -9rem;
     left: 50%;
 
-    width: 7rem;
-    height: 7rem;
+    width: 9rem;
+    height: 9rem;
     display: inline-block;
     padding: 2rem;
 
-    transform: translate3d(-50%, 0, 0);
+    transform: translate3d(-50%, 100%, 0);
+    transition: transform .3s ease-in-out;
 
     text-align: center;
+
+    &.inview {
+        transform: translate3d(-50%, 0, 0);
+    }
+
+    &:after {
+        content: '';
+
+        position: absolute;
+        top: 2rem;
+        left: 2rem;
+
+        display: block;
+        height: 5rem;
+        width: 5rem;
+
+        border: .2rem solid $theme-primary;
+
+        transform: rotate3d(0,0,1,45deg);
+    }
 
     span {
         @include line-variable-width($theme-primary, .4rem, 2rem);

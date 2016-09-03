@@ -296,16 +296,25 @@
         }
     }
 
-    &:active,
-    &:focus {
-        &:before {
-            animation: zoom-out .3s ease-in-out 1;
+    &.animating {
+        &:active,
+        &:focus {
+            &:before {
+                animation: zoom-out .3s ease-in-out 1;
+            }
+
+            &:after {
+                animation: rotate-out .3s ease-in-out 1;
+            }
         }
 
         &:after {
-            animation: rotate-out .3s ease-in-out 1;
+            animation: rotate 6s ease-in-out;
+            animation-iteration-count: infinite;
         }
     }
+
+
 
     &:before,
     &:after {
@@ -333,8 +342,6 @@
         transform: rotate3d(0,0,1,45deg);
 
         transition: all .3s ease-in-out;
-        animation: rotate 6s ease-in-out;
-        animation-iteration-count: infinite;
     }
 }
 

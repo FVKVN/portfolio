@@ -4,7 +4,7 @@
 	 width="146px" height="126.9px" viewBox="0 0 146 126.9" style="enable-background:new 0 0 146 126.9;" xml:space="preserve">
 <style type="text/css">
 	.st0{fill:#2EFFD1;}
-	.st1{fill:#662D91;}
+	.st1{fill:#a2ffe8;}
 </style>
 <g>
 	<rect x="32.4" y="27.1" class="st0" width="30.7" height="7.4"/>
@@ -14,9 +14,9 @@
 	<rect x="47.7" y="67.2" class="st0" width="69.6" height="7.4"/>
 	<rect x="47.7" y="80.6" class="st0" width="38.1" height="7.4"/>
 	<rect x="123.3" y="40.5" class="st0" width="22.6" height="7.4"/>
-	
+
 		<rect x="47.8" y="53.8" transform="matrix(-1 -1.224647e-16 1.224647e-16 -1 118.1615 115.128)" class="st0" width="22.6" height="7.4"/>
-	
+
 		<rect x="76.3" y="53.8" transform="matrix(-1 -1.224647e-16 1.224647e-16 -1 181.2896 115.128)" class="st0" width="28.6" height="7.4"/>
 	<rect x="69.1" y="27.1" class="st0" width="66.5" height="7.4"/>
 	<path class="st1" d="M4.8,10.6l11.5,6.6l-2.5,4L0,12.6v-4L13.9,0l2.4,3.8L4.8,10.6z"/>

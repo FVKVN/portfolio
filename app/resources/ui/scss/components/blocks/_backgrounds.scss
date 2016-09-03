@@ -18,8 +18,11 @@
 .background--theme-secondary {
     background-color: $theme-secondary--lighter;
 
+    h2 {
+        color: $theme-primary !important;
+    }
+
     p,
-    h2,
     h3 {
         color: $theme-primary--light !important;
 
