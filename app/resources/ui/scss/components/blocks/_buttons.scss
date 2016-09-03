@@ -283,18 +283,7 @@
 
     //border: .2rem solid $theme-secondary;
 
-    &:hover {
-        &:after {
-            transform: scale3d(1.5, 1.5, 1) rotate3d(0,0,1,45deg);
 
-            animation: none;
-        }
-
-        &:before {
-            opacity: 1;
-            transform: scale3d(1,1,1);
-        }
-    }
 
     &.animating {
         &:active,
@@ -311,6 +300,19 @@
         &:after {
             animation: rotate 6s ease-in-out;
             animation-iteration-count: infinite;
+        }
+
+        &:hover {
+            &:after {
+                transform: scale3d(1.5, 1.5, 1) rotate3d(0,0,1,45deg);
+
+                animation: none;
+            }
+
+            &:before {
+                opacity: 1;
+                transform: scale3d(1,1,1);
+            }
         }
     }
 
