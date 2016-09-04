@@ -12,6 +12,7 @@
 
     overflow: hidden;
 }
+
 .work-detail__panel {
     min-height: 50vh;
     height: 100%;
@@ -35,12 +36,14 @@
     }
 
     &--info {
-        padding: 8rem 7rem 7rem 7rem;
+        padding: 3rem;
 
         background: $white;
 
         @media(min-width: $screen-md) {
             width: 40vw;
+            padding: 8rem 7rem 7rem 7rem;
+
         }
     }
 }
@@ -57,4 +60,8 @@
 
 .work-detail__panel__sub-title {
     font-size: 1.8rem;
+}
+
+.work-detail__panel__intro {
+    margin-bottom: 3rem;
 }

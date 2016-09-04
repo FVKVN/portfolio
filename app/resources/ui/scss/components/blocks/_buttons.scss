@@ -15,7 +15,7 @@
 
     color: $text-color;
     text-align: center;
-    font-size: 1.4rem;
+    font-size: 1.8rem;
     text-decoration: none;
     vertical-align: middle;
     line-height: 1;
@@ -48,8 +48,6 @@
     @media (min-width: $screen-sm) {
         display: inline-block;
         width: auto;
-
-        font-size: 1.8rem;
     }
 }
 
@@ -240,10 +238,6 @@
     }
 }
 
-.btn-group__wrapper {
-    margin: -1rem;
-}
-
 .btn-group {
     display: flex;
     flex-wrap: wrap;
@@ -251,8 +245,12 @@
     align-content: space-between;
 
     .btn {
-        flex: 1 0 auto;
-        margin: 1rem;
+        flex: 1 1 auto;
+        margin: 1rem 0;
+
+        max-width: calc(50% - 1rem);
+        min-width: 27rem;
+
     }
 }
 

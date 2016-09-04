@@ -1,0 +1,23 @@
+<header class="main-header">
+    <a href="{{ site.url }}" class="main-header__link">
+        {% include logo.html %}
+    </a>
+    <!--<button id="js-toggle-nav" class="btn btn&#45;&#45;toggle-nav" data-target="main-nav-wrapper">-->
+    <!--MENU-->
+    <!--<i class="btn&#45;&#45;toggle-nav__icon"></i>-->
+    <!--</button>-->
+
+    <nav class="main-nav" id="main-nav">
+        <ul class="nav nav__list">
+            <li role="presentation" class="nav__list__item">
+                <a href="{{ site.url }}#section-about" class="nav__link js-ajax-link">About</a>
+            </li>
+            <li role="presentation" class="nav__list__item">
+                <a href="{{ site.url }}#section-work" class="nav__link js-ajax-link">Work</a>
+            </li>
+            <li role="presentation" class="nav__list__item">
+                <a href="{{ site.url }}#section-contact" class="nav__link js-ajax-link">Contact</a>
+            </li>
+        </ul>
+    </nav>
+</header>

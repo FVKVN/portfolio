@@ -2,7 +2,6 @@
 layout: homepage
 title: FVKVN
 subtitle: Front-end development &amp;&amp; graphic design.
-redirect: http://www.fvkvn.be/contact/thanks.html
 social:
     - name: twitter
       link: https://twitter.com/_fvkvn
@@ -233,28 +232,28 @@ social:
     <div class="page-section__container container">
         <div class="row">
             <div class="col-md-7">
-                <form action="https://getsimpleform.com/messages?form_api_token=081290cd3bd1acc9137f8ddf2897edf6" method="post">
-                    <!-- the redirect_to is optional, the form will redirect to the referrer on submission -->
-                    <input type='hidden' name='redirect_to' value='{{ page.redirect }}' />
-                    <!-- all your input fields here.... -->
-                    <div class="form-group">
-                        <label for="name" class="form-control__label text--theme-secondary">Your name</label>
-                        <input type='text' name='name' class="form-control"/>
-                    </div>
-                    <div class="form-group">
-                        <label for="email" class="form-control__label text--theme-secondary">Your e-mail</label>
-                        <input type='email' name='email' class="form-control"/>
-                    </div>
-                    <div class="form-group">
-                        <label for="Message" class="form-control__label text--theme-secondary">Your message</label>
-                        <textarea type='textarea' name='message' class="form-control form-control--textarea"></textarea>
-                    </div>
-                    <div class="form-group">
-                        <input type='submit' value='Submit' class="btn btn--secondary"/>
-                    </div>
-
-
-                </form>
+                <div class="form-container">
+                    <form action="https://getsimpleform.com/messages?form_api_token=8a6ab3ed5629789aaf0b8fbcfcb05b13" method="post" class="js-ajax-form">
+                        <!-- the redirect_to is optional, the form will redirect to the referrer on submission -->
+                        <input type='hidden' name='redirect_to' class="js-ajax-form-redirect" value='{{ site.url }}/contact/thanks.html' />
+                        <!-- all your input fields here.... -->
+                        <div class="form-group">
+                            <label for="name" class="form-control__label text--theme-secondary">Your name <span>*</span></label>
+                            <input type='text' name='name' class="form-control" required/>
+                        </div>
+                        <div class="form-group">
+                            <label for="email" class="form-control__label text--theme-secondary">Your e-mail <span>*</span></label>
+                            <input type='email' name='email' class="form-control" required/>
+                        </div>
+                        <div class="form-group">
+                            <label for="Message" class="form-control__label text--theme-secondary">Your message <span>*</span></label>
+                            <textarea type='textarea' name='message' class="form-control form-control--textarea" required></textarea>
+                        </div>
+                        <div class="form-group">
+                            <input type='submit' value='Submit' class="btn btn--secondary"/>
+                        </div>
+                    </form>
+                </div>
             </div>
             <div class="col-md-4 col-md-offset-1">
                 <h4 class="text--theme-secondary">FVKVN</h4>
