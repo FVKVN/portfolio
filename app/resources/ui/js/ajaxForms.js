@@ -11,7 +11,6 @@ fvkvn.ajaxForms = function() {
 
             var $element = $(this),
                 url = $element.attr('action'),
-                succesUrl = $element.find('.js-ajax-form-redirect').val(),
                 $parent = $element.parent();
 
             var formData = {
@@ -20,11 +19,14 @@ fvkvn.ajaxForms = function() {
                 'message': $element.find('textarea[name="message"]').val()
             };
 
+            console.log(formData);
+
 
             $.ajax({
                 type: 'POST',
                 url: url,
-                data: formData
+                data: formData,
+                dataType: 'jsonp'
             }).done(function (data) {
                 console.log(data);
 

@@ -13,9 +13,18 @@
 }
 
 .services__title {
-    margin-top: 0;
+    margin: 0;
 
     text-align: left;
+}
+
+.services-header {
+    margin-bottom: 3rem;
+
+    @media (max-width: $screen-md) {
+        display: flex;
+        align-items: center;
+    }
 }
 
 .services__description {
@@ -33,6 +42,7 @@
     width: 100%;
     max-width: 10rem;
     height: auto;
+    margin-right: 2rem;
 
     @media(min-width: $screen-sm) {
         margin: 0 auto;

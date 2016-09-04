@@ -7,6 +7,8 @@ social:
       link: https://twitter.com/_fvkvn
     - name: facebook
       link: https://www.facebook.com/fvkvn/
+    - name: linkedin
+      link: https://be.linkedin.com/in/kevin-fivé-b2231868
     - name: codepen
       link: http://codepen.io/FVKVN/
     - name: github
@@ -45,8 +47,10 @@ social:
         <section class="services">
             <div class="row">
                 <div class="col-md-12">
-                    <img src="/frontend/img/general/design.svg" alt="Graphic design" class="services__visual visible-xs hidden-sm hidden-md hidden-lg hidden-xl">
-                    <h3 class="services__title">Graphic / digital design</h3>
+                    <header class="services-header">
+                        <img src="/frontend/img/general/design.svg" alt="Graphic design" class="services__visual visible-xs hidden-sm hidden-md hidden-lg hidden-xl">
+                        <h3 class="services__title">Graphic / digital design</h3>
+                    </header>
                 </div>
             </div>
             <div class="row">
@@ -66,7 +70,10 @@ social:
         <section class="services">
             <div class="row">
                 <div class="col-md-12">
-                    <img src="/frontend/img/general/code.svg" alt="Development" class="services__visual visible-xs hidden-sm hidden-md hidden-lg hidden-xl"> <h3 class="services__title">Front-end development</h3>
+                    <div class="services-header">
+                        <img src="/frontend/img/general/code.svg" alt="Development" class="services__visual visible-xs hidden-sm hidden-md hidden-lg hidden-xl">
+                        <h3 class="services__title">Front-end development</h3>
+                    </div>
                 </div>
             </div>
             <div class="row">
@@ -234,6 +241,7 @@ social:
             <div class="col-md-7">
                 <div class="form-container">
                     <form action="https://getsimpleform.com/messages?form_api_token=8a6ab3ed5629789aaf0b8fbcfcb05b13" method="post" class="js-ajax-form">
+                        <input type='hidden' name='redirect_to' class="js-ajax-form-redirect" value='{{ page.redirect }}' />
                         <!-- all your input fields here.... -->
                         <div class="form-group">
                             <label for="name" class="form-control__label text--theme-secondary">Your name <span>*</span></label>
