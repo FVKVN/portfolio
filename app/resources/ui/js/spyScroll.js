@@ -9,7 +9,8 @@ fvkvn.spyScroll = function() {
     init = (function() {
         if ($body.hasClass('homepage')) {
             $body.scrollspy({
-                target: '#main-nav'
+                target: '#main-nav',
+                offset: 500
             });
 
             $body.on('activate.bs.scrollspy', function(d) {

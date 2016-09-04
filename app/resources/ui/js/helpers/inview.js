@@ -22,7 +22,7 @@ fvkvn.inview = function() {
             };
 
             _scrollHandler = function() {
-                if (_timeout != null) {
+                if (_timeout !== null) {
                     clearTimeout(_timeout);
                 }
 

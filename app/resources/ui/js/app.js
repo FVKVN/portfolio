@@ -24,6 +24,7 @@ fvkvn = (function($, window, undefined) {
         fvkvn.anchorLinks();
         fvkvn.spyScroll();
         fvkvn.pageTransitions();
+        fvkvn.ajaxForms();
 
         if ($('.js-parallax').length > 0) {
             fvkvn.parallaxHeader();
