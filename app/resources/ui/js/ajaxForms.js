@@ -24,20 +24,16 @@ fvkvn.ajaxForms = function() {
                 url: url,
                 data: formData,
                 dataType: 'json'
+            }).done(function (data) {
+                console.log(data);
+
+                if (!data.success) {
+
+                } else {
+                    $parent.append('<h3>Thank you, you\'re message has been sent. I\'ll get back to you as soon as possible</h3>');
+                    $element.hide();
+                }
             });
-
-            console.log(formData);
-
-            //.done(function (data) {
-            //    console.log(data);
-            //
-            //    if (! data.success) {
-            //
-            //    } else {
-            //        $parent.append('<h3>Thank you, you\'re message has been sent. I\'ll get back to you as soon as possible</h3>');
-            //        $element.hide();
-            //    }
-            //})
 
         });
     })();

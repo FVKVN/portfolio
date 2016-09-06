@@ -17,7 +17,7 @@ keep_files: [web/icons/*]
 # called by using 'site.author.name' and so on
 author:
   name: Kevin Fiv&eacute;
-  mail: kevin@fvkvn.be
+  mail: whatsup@fvkvn.be
   address: 9000 Ghent, Belgium
   bio: Designer developer based in Ghent Belgium.
 
