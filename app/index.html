@@ -240,16 +240,15 @@ social:
         <div class="row">
             <div class="col-md-7">
                 <div class="form-container">
-                    <form action="https://getsimpleform.com/messages?form_api_token=8a6ab3ed5629789aaf0b8fbcfcb05b13" method="post" class="js-ajax-form">
-                        <input type='hidden' name='redirect_to' class="js-ajax-form-redirect" value='{{ page.redirect }}' />
-                        <!-- all your input fields here.... -->
+                    <form action="https://formspree.io/whatsup@fvkvn.be" class="js-ajax-form">
+                        <input type='hidden' name='_gotcha' />
                         <div class="form-group">
                             <label for="name" class="form-control__label text--theme-secondary">Your name <span>*</span></label>
                             <input type='text' name='name' class="form-control" required/>
                         </div>
                         <div class="form-group">
                             <label for="email" class="form-control__label text--theme-secondary">Your e-mail <span>*</span></label>
-                            <input type='email' name='email' class="form-control" required/>
+                            <input type='email' name='_replyto' class="form-control" required/>
                         </div>
                         <div class="form-group">
                             <label for="Message" class="form-control__label text--theme-secondary">Your message <span>*</span></label>

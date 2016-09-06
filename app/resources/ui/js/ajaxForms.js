@@ -15,28 +15,29 @@ fvkvn.ajaxForms = function() {
 
             var formData = {
                 'name': $element.find('input[name="name"]').val(),
-                'email': $element.find('input[name="email"]').val(),
+                'email': $element.find('input[name="_replyto"]').val(),
                 'message': $element.find('textarea[name="message"]').val()
             };
 
-            console.log(formData);
-
-
             $.ajax({
-                type: 'POST',
+                method: 'POST',
                 url: url,
                 data: formData,
-                dataType: 'jsonp'
-            }).done(function (data) {
-                console.log(data);
+                dataType: 'json'
+            });
 
-                if (! data.success) {
+            console.log(formData);
 
-                } else {
-                    $parent.append('<h3>Thank you, you\'re message has been sent. I\'ll get back to you as soon as possible</h3>');
-                    $element.hide();
-                }
-            })
+            //.done(function (data) {
+            //    console.log(data);
+            //
+            //    if (! data.success) {
+            //
+            //    } else {
+            //        $parent.append('<h3>Thank you, you\'re message has been sent. I\'ll get back to you as soon as possible</h3>');
+            //        $element.hide();
+            //    }
+            //})
 
         });
     })();

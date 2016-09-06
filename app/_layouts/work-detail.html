@@ -28,6 +28,12 @@ layout: page
                     <p class="intro-text work-detail__panel__intro">{{ page.intro }}</p>
                     {{ content }}
                     <table class="project-overview-table">
+                        {% if page.label == 'kunstmaan' %}
+                            <tr>
+                                <th>@ Kunstmaan?</th>
+                                <td>TRUE</td>
+                            </tr>
+                        {% endif %}
                         <tr>
                             <th>Date:</th>
                             <td>{{ page.date }}</td>
