@@ -1,0 +1,46 @@
+/* ==========================================================================
+   App warnings
+   ========================================================================== */
+
+.app-warning-holder {
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+
+    max-width: 50rem;
+    width: 100%;
+}
+
+.app-warningbox {
+    padding: 3rem;
+
+    h2 {
+        margin: 0 0 2rem 0;
+
+        font-size: 3rem;
+    }
+
+    p {
+        font-size: 2rem;
+    }
+
+    .btn {
+        margin-top: 3rem;
+    }
+}
+
+.app-warning--js__radio {
+    visibility: hidden;
+    float: left;
+
+    &:checked + .app-warningbox {
+        display: none;
+    }
+}
+
+.app-warningbox--browser {
+    h2,
+    p {
+        color: $theme-secondary;
+    }
+}
