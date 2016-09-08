@@ -29,10 +29,6 @@ layout: page
                     {{ content }}
                     <table class="project-overview-table">
                         <tr>
-                            <th>@ Kunstmaan?</th>
-                            <td>{% if page.label == 'Kunstmaan' %}TRUE{% else %}FALSE{% endif %}</td>
-                        </tr>
-                        <tr>
                             <th>Date:</th>
                             <td>{{ page.date }}</td>
                         </tr>
@@ -43,6 +39,9 @@ layout: page
                         <tr>
                             <th>Disciplines:</th>
                             <td>{{ page.disciplines }}</td>
+                        </tr>
+                        <tr>
+                            <td colspan="2" class="text--primary text--center">@ Kunstmaan</td>
                         </tr>
                     </table>
                 </section>

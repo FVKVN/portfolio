@@ -30,7 +30,7 @@ fvkvn.ajaxForms = function() {
                 if (!data.success) {
 
                 } else {
-                    $parent.append('<h3>Thank you, you\'re message has been sent. I\'ll get back to you as soon as possible</h3>');
+                    $parent.append('<h3>Thank you, you\'re message has been sent. I\'ll get back to you as soon as possible.</h3>');
                     $element.hide();
                 }
             });
