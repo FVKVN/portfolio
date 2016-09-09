@@ -40,9 +40,12 @@ layout: page
                             <th>Disciplines:</th>
                             <td>{{ page.disciplines }}</td>
                         </tr>
+                        {% if page.label == 'Kunstmaan' %}
                         <tr>
                             <td colspan="2" class="text--primary text--center">@ Kunstmaan</td>
                         </tr>
+                        {% endif %}
+
                     </table>
                 </section>
             </div>

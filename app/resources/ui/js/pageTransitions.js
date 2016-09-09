@@ -3,9 +3,6 @@ var fvkvn = fvkvn || {};
 fvkvn.pageTransitions = function() {
     var init, _animateSvg, _animateSvgIn, _animateSvgOut, _clickHandler, _changePage;
 
-    var $body = $('body'),
-        $window = $('window');
-
     //svg config
     var $svgHolder = $('.js-trans-overlay-container'),
         _shapes = $('.js-trans-overlay > g polygon'),
@@ -81,6 +78,8 @@ fvkvn.pageTransitions = function() {
             newSection = $('<div class="' + newSectionName + '"> </div>');
 
         newSection.load(url + ' .js-ajax-content-wrapper > *', function(e) {
+            var $body = $('body');
+
             $('.js-ajax-content-wrapper').html(newSection);
 
             if ($body.hasClass('homepage')) {
@@ -115,17 +114,11 @@ fvkvn.pageTransitions = function() {
 
             _animateSvgOut();
 
+            if(url !== window.location) {
+                window.history.pushState({path: url}, '', url);
+            }
+
         });
-
-
-
-        if(url !== window.location) {
-            window.history.pushState({path: url}, '', url);
-        }
-
-
-
-
     };
 
     _clickHandler = function(e) {
@@ -142,5 +135,16 @@ fvkvn.pageTransitions = function() {
 
     init = (function() {
         $hook.on('click', _clickHandler);
+
+        $(window).on('popstate', function() {
+            var newPageArray = location.pathname.split('/'),
+                newPage = newPageArray[newPageArray.length - 1];
+
+            console.log(location.pathname);
+
+            if(!_isAnimating) {
+                _animateSvgIn(newPage);
+            }
+        })
     })();
 };

@@ -4,7 +4,7 @@
 
 //text helpers
 .text--center {
-    text-align: center;
+    text-align: center !important;
 }
 
 .text--white {
@@ -12,12 +12,10 @@
 
     a {
         color: $white;
-
-
     }
 }
 
-.text--theme-secondary {
+.text--secondary {
     color: $theme-secondary;
 
     a {
@@ -27,6 +25,10 @@
             color: $theme-primary--dark;
         }
     }
+}
+
+.text--primary {
+    color: $theme-primary;
 }
 
 a.text--white {
