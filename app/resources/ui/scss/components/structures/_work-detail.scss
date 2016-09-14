@@ -14,7 +14,6 @@
 }
 
 .work-detail__panel {
-    min-height: 50vh;
     height: 100%;
 
     @media(min-width: $screen-md) {
@@ -56,6 +55,7 @@
 
 .work-detail__panel__title {
     font-size: 5rem;
+    word-break: break-all;
 }
 
 .work-detail__panel__sub-title {

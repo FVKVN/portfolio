@@ -92,9 +92,9 @@ fvkvn.pageTransitions = function() {
             fvkvn.header();
             fvkvn.anchorLinks();
             fvkvn.spyScroll();
-            fvkvn.pageTransitions();
             fvkvn.progressBars();
             fvkvn.sliders();
+            fvkvn.pageTransitions();
 
             var hash = url.split('#');
 
@@ -115,9 +115,10 @@ fvkvn.pageTransitions = function() {
             _animateSvgOut();
 
             if(url !== window.location) {
-                window.history.pushState({path: url}, '', url);
+               window.history.pushState({path: url}, '', url);
             }
 
+            window.location.hash = '';
         });
     };
 
@@ -137,14 +138,17 @@ fvkvn.pageTransitions = function() {
         $hook.on('click', _clickHandler);
 
         $(window).on('popstate', function() {
-            var newPageArray = location.pathname.split('/'),
-                newPage = newPageArray[newPageArray.length - 1];
+          var newPage;
 
-            console.log(location.pathname);
+           if (location.hash !==  '') {
+               newPage = location.host + '#' + location.hash;
+           } else {
+               newPage = location.pathname;
+           }
 
-            if(!_isAnimating) {
-                _animateSvgIn(newPage);
-            }
+           if(!_isAnimating) {
+               _animateSvgIn(newPage);
+           }
         })
     })();
 };
