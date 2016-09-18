@@ -98,13 +98,7 @@ fvkvn.pageTransitions = function() {
 
                 },
                 onAfter: function() {
-                    fvkvn.inview();
-                    fvkvn.header();
-                    fvkvn.anchorLinks();
-                    fvkvn.spyScroll();
-                    fvkvn.progressBars();
-                    fvkvn.sliders();
-                    fvkvn.pageTransitions();
+                    fvkvn.init();
 
                     _animateSvgOut();
                 }

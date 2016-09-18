@@ -30,7 +30,7 @@
         @include gradient--diagonal(rgba($theme-primary, .7), rgba($theme-secondary, .7));
 
         @media(min-width: $screen-md) {
-            width: 60vw;
+            width: 50vw;
         }
     }
 
@@ -40,9 +40,8 @@
         background: $white;
 
         @media(min-width: $screen-md) {
-            width: 40vw;
+            width: 50vw;
             padding: 8rem 7rem 7rem 7rem;
-
         }
     }
 }
