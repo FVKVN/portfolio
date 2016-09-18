@@ -1,7 +1,7 @@
 var fvkvn = fvkvn || {};
 
 fvkvn.pageTransitions = function() {
-    var init, _animateSvg, _animateSvgIn, _animateSvgOut, _clickHandler, _changePage;
+    var init, _animateSvg, _animateSvgIn, _animateSvgOut, _clickHandler, _changePage, _popState;
 
     //svg config
     var $svgHolder = $('.js-trans-overlay-container'),
@@ -11,7 +11,8 @@ fvkvn.pageTransitions = function() {
 
     //ajax setup
     var $hook = $('.js-ajax-link'),
-        _isAnimating = false;
+        _isAnimating = false,
+        _popEventListnerAdded = false;
 
     _animateSvgIn = function(target) {
         _isAnimating = true;
@@ -73,6 +74,20 @@ fvkvn.pageTransitions = function() {
         timeline.staggerFromTo(_shapes, _duration, from, to, _stagger, 0);
     };
 
+    _popState = function() {
+        var targetUrl;
+
+        if (location.hash !==  '') {
+            targetUrl = location.origin + '#' + location.hash;
+        } else {
+            targetUrl = location.origin;
+        }
+
+        if(!_isAnimating) {
+            _animateSvgIn(targetUrl);
+        }
+    };
+
     _changePage = function(url, bool) {
         var newSectionName = 'ajax-content-' + url.replace('.html', ''),
             newSection = $('<div class="' + newSectionName + '"> </div>');
@@ -98,6 +113,7 @@ fvkvn.pageTransitions = function() {
 
             var hash = url.split('#');
 
+            //handle anchor back
             if (hash[1] !== undefined) {
                 $('html,body').animate({
                     scrollTop: $('#' + hash[1]).offset().top
@@ -118,6 +134,11 @@ fvkvn.pageTransitions = function() {
                window.history.pushState({path: url}, '', url);
             }
 
+            if(!_popEventListnerAdded) {
+                window.addEventListener("popstate", _popState);
+                _popEventListnerAdded = true;
+            };
+
             window.location.hash = '';
         });
     };
@@ -134,21 +155,10 @@ fvkvn.pageTransitions = function() {
 
     };
 
+
+
     init = (function() {
         $hook.on('click', _clickHandler);
 
-        $(window).on('popstate', function() {
-          var newPage;
-
-           if (location.hash !==  '') {
-               newPage = location.host + '#' + location.hash;
-           } else {
-               newPage = location.pathname;
-           }
-
-           if(!_isAnimating) {
-               _animateSvgIn(newPage);
-           }
-        })
     })();
 };
