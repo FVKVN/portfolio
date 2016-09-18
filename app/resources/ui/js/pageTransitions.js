@@ -1,7 +1,7 @@
 var fvkvn = fvkvn || {};
 
 fvkvn.pageTransitions = function() {
-    var init, _animateSvg, _animateSvgIn, _animateSvgOut, _clickHandler, _changePage, _popState;
+    var init, _animateSvg, _animateSvgIn, _animateSvgOut, _clickHandler;
 
     //svg config
     var $svgHolder = $('.js-trans-overlay-container'),
@@ -10,18 +10,15 @@ fvkvn.pageTransitions = function() {
         _duration = 2;
 
     //ajax setup
-    var $hook = $('.js-ajax-link'),
-        _isAnimating = false,
-        _popEventListnerAdded = false;
+    var _isAnimating = false;
 
-    _animateSvgIn = function(target) {
+    _animateSvgIn = function() {
         _isAnimating = true;
 
         var _options = {
                 delay: 0,
                 onComplete: function() {
                     _isAnimating = false;
-                    _changePage(target, true);
                 }
             },
             _tmaxTl = new TimelineMax(_options);
@@ -74,91 +71,44 @@ fvkvn.pageTransitions = function() {
         timeline.staggerFromTo(_shapes, _duration, from, to, _stagger, 0);
     };
 
-    _popState = function() {
-        var targetUrl;
-
-        if (location.hash !==  '') {
-            targetUrl = location.origin + '#' + location.hash;
-        } else {
-            targetUrl = location.origin;
-        }
-
-        if(!_isAnimating) {
-            _animateSvgIn(targetUrl);
-        }
-    };
-
-    _changePage = function(url, bool) {
-        var newSectionName = 'ajax-content-' + url.replace('.html', ''),
-            newSection = $('<div class="' + newSectionName + '"> </div>');
-
-        newSection.load(url + ' .js-ajax-content-wrapper > *', function(e) {
-            var $body = $('body');
-
-            $('.js-ajax-content-wrapper').html(newSection);
-
-            if ($body.hasClass('homepage')) {
-                $body.removeClass('homepage')
-            } else {
-                $body.addClass('homepage')
-            }
-
-            fvkvn.inview();
-            fvkvn.header();
-            fvkvn.anchorLinks();
-            fvkvn.spyScroll();
-            fvkvn.progressBars();
-            fvkvn.sliders();
-            fvkvn.pageTransitions();
-
-            var hash = url.split('#');
-
-            //handle anchor back
-            if (hash[1] !== undefined) {
-                $('html,body').animate({
-                    scrollTop: $('#' + hash[1]).offset().top
-                });
-
-                $('html, body').stop().animate({
-                    'scrollTop': $('#' + hash[1]).offset().top
-                });
-            } else {
-                $('html,body').animate({
-                    scrollTop: 0
-                });
-            }
-
-            _animateSvgOut();
-
-            if(url !== window.location) {
-               window.history.pushState({path: url}, '', url);
-            }
-
-            if(!_popEventListnerAdded) {
-                window.addEventListener("popstate", _popState);
-                _popEventListnerAdded = true;
-            };
-
-            window.location.hash = '';
-        });
-    };
-
-    _clickHandler = function(e) {
-        e.preventDefault();
-
-        var $element = $(this),
-            target = $element.attr('href');
-
-        if(!_isAnimating) {
-            _animateSvgIn(target);
-        }
-
-    };
-
-
-
     init = (function() {
-        $hook.on('click', _clickHandler);
+        var options = {
+                prefetch: true,
+                cacheLength: 2,
+                scroll: false,
+                onStart: {
+                    duration: 2000, // Duration of our animation
+                    render: function($container) {
+                        _animateSvgIn();
+                    }
+                },
+                onReady: {
+                    duration: 0,
+                    render: function($container, $newContent) {
+                        $container.html($newContent);
 
+                        var $body = $('body');
+
+                        if ($body.hasClass('homepage')) {
+                            $body.removeClass('homepage')
+                        } else {
+                            $body.addClass('homepage')
+                        }
+                    }
+
+                },
+                onAfter: function() {
+                    fvkvn.inview();
+                    fvkvn.header();
+                    fvkvn.anchorLinks();
+                    fvkvn.spyScroll();
+                    fvkvn.progressBars();
+                    fvkvn.sliders();
+                    fvkvn.pageTransitions();
+
+                    _animateSvgOut();
+                }
+            },
+            smoothState = $('#js-ajax-content-wrapper').smoothState(options).data('smoothState');
     })();
 };

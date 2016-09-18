@@ -29,6 +29,7 @@ var jsFooter = [
     bowerComponentsPath + 'snap.svg/dist/snap.svg-min.js',
     bowerComponentsPath + 'slick-carousel/slick/slick.min.js',
     bowerComponentsPath + 'bootstrap-sass-official/assets/javascripts/bootstrap/scrollspy.js',
+    bowerComponentsPath + 'smoothstate/src/jquery.smoothState.js',
     resourcesPath + 'ui/js/**/*.js'
 ];
 
