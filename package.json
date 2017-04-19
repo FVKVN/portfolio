@@ -1,42 +1,25 @@
 {
-  "name": "fvkvn",
+  "name": "frontifyTest",
   "version": "1.0.0",
+  "main": "gulpfile.js",
+  "dependencies": {
+    "bootstrap-sass": "^3.3.7",
+    "jquery": "^3.1.1"
+  },
   "devDependencies": {
-    "bower": "~1.3",
-    "browser-sync": "2.11.1",
-    "del": "^1.1.1",
-    "gulp": "~3.9",
-    "gulp-autoprefixer": "2.1.0",
-    "gulp-changed": "1.1.1",
-    "gulp-chmod": "^1.2.0",
-    "gulp-combine-mq": "0.3.1",
-    "gulp-concat": "2.4.3",
-    "gulp-debug": "^2.1.2",
-    "gulp-flatten": "0.0.4",
-    "gulp-if": "^1.2.5",
-    "gulp-imagemin": "2.1.0",
-    "gulp-inject": "1.1.1",
-    "gulp-inject-reload": "0.0.2",
-    "gulp-jshint": "1.9.0",
-    "gulp-load-plugins": "0.8.0",
-    "gulp-minify-css": "0.4.3",
-    "gulp-rename": "1.2.0",
-    "gulp-rev": "3.0.1",
-    "gulp-rsync": "0.0.6",
-    "gulp-sass": "^2.1.0",
-    "gulp-shell": "0.2.11",
-    "gulp-uglify": "1.1.0",
-    "gulp-util": "3.0.2",
-    "jshint-stylish": "1.0.0",
-    "lodash": "^3.0.0",
-    "map-stream": "0.0.5",
-    "merge-stream": "0.1.7",
-    "node-notifier": "4.1.0",
-    "rebase": "0.3.0",
-    "run-sequence": "1.0.2",
-    "through2": "^2.0.0"
+    "groundcontrol": "git+ssh://git@git.kunstmaan.be:9999/kunstmaan/groundcontrol.git#v0.0.17",
+    "gulp": "github:gulpjs/gulp#4.0",
+    "gulp-shell": "^0.5.2",
+    "open": "0.0.5"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "gulp dev",
+    "build": "gulp build:prod"
   },
   "engines": {
-    "node": ">=0.10.0"
-  }
+    "node": ">=6.0"
+  },
+  "author": "FVKVN",
+  "license": "ISC"
 }
