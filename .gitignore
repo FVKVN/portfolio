@@ -1,6 +1,0 @@
-/vendor/
-.idea
-.DS_Store
-node_modules/
-web/vendor/
-.sass-cache/

@@ -1,8 +1,0 @@
-/* ==========================================================================
-   Mixins: gradients
-   ========================================================================== */
-
-//diagonal gradient
-@mixin gradient--diagonal($from, $to) {
-    background: linear-gradient(135deg, $from 0%, $to 100%);
-}
