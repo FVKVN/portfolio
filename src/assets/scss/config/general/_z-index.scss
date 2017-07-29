@@ -1,0 +1,25 @@
+/* ==========================================================================
+   Z-indexes
+
+   This file is exclusively intended for setting up variables
+   Never add styles directly to this file
+   ========================================================================== */
+
+
+$z-indexes: (
+    hell: -100,
+    sub: -1,
+    default: 1,
+    overlay: 400,
+    modal: 500,
+    heaven: 600
+);
+
+@function z($key) {
+    @if map_has_key($z-indexes, $key) {
+        @return map_get($z-indexes, $key);
+    }
+
+    @warn 'Unknown #{$key} in $z-indexes.';
+    @return null;
+};

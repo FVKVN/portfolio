@@ -1,0 +1,27 @@
+/* ==========================================================================
+   POLYGON ANIMATION
+   ========================================================================== */
+
+.polygon-animation-done {
+    .hero__visual__logo {
+        display: none;
+    }
+
+    svg.hero__visual > g polygon {
+        opacity: 1;
+    }
+
+    .hero__title {
+        opacity: 1;
+
+        @media (min-width: $screen-sm) {
+            transform: translate3d(-50%, 0, 0);
+
+
+        }
+    }
+
+    body {
+        overflow: auto;
+    }
+}
