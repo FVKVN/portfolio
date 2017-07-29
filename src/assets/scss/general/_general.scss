@@ -5,6 +5,8 @@
    Never add styles directly to this file
    ========================================================================== */
 
+@import "normalize";
+
 /* Base
    ========================================================================== */
 @import "base";
@@ -12,6 +14,6 @@
 /* Typography
    ========================================================================== */
 
-@import "typography/bodycopy",
-        "typography/headings",
-        "typography/iconfont";
+@import "typography/bodycopy";
+@import "typography/headings";
+@import "typography/iconfont";

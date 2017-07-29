@@ -1,6 +1,44 @@
 import React, { Component } from 'react';
+import { TimelineMax, Elastic } from 'gsap';
+import ReactDOM from 'react-dom';
+
+function animationDone() {
+    document.documentElement.classList.add('polygon-animation-done');
+}
 
 class BigHead extends Component {
+    constructor(props) {
+        super(props);
+        this.dom = {};
+    }
+
+    componentDidMount() {
+        this.dom.root = ReactDOM.findDOMNode(this);
+
+        const options = {
+            delay: 0.3, // init pause time
+            onComplete: animationDone
+        };
+        const tmaxTl = new TimelineMax(options);
+        const shapes = this.dom.root.querySelectorAll('polygon');
+        const stagger = 0.00475;
+        const duration = 1.5;
+
+        const polygon_staggerFrom = {
+            scale: 0,
+            opacity: 0,
+            transformOrigin: 'center center'
+        };
+
+        const polygon_staggerTo = {
+            opacity: 1,
+            scale: 1,
+            ease: Elastic.easeInOut
+        };
+
+        tmaxTl.staggerFromTo(shapes, duration, polygon_staggerFrom, polygon_staggerTo, stagger, 0);
+    }
+
     render() {
         return (
             <svg id="head" x="0px" y="0px" viewBox="0 0 1232.585 962.75" className="hero__visual">
