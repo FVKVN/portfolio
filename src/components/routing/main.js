@@ -8,15 +8,12 @@ import Contact from '../../pages/contact.js';
 class Main extends Component {
     render() {
         return (
-            <main>
-                <Switch>
-                    <Route exact path='/' component={Home}/>
-                    <Route path='/about' component={About}/>
-                    <Route path='/work' component={Work}/>
-                    <Route path='/contact' component={Contact}/>
-
-                </Switch>
-            </main>
+            <Switch>
+                <Route exact path='/' component={Home}/>
+                <Route path='/about' component={About}/>
+                <Route path='/work' component={Work}/>
+                <Route path='/contact' component={Contact}/>
+            </Switch>
         )
     }
 }
