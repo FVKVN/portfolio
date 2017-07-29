@@ -4,7 +4,7 @@ import data from './data/home.json';
 class Home extends Component {
     render () {
         return (
-
+            <h1>Home</h1>
         )
     }
 }
