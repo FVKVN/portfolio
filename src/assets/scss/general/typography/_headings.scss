@@ -41,7 +41,7 @@ h2 {
     font-size: 4rem;
     color: $theme-primary;
 
-    @media(min-width: $screen-md-min) {
+    @media(min-width: $screen-md) {
         margin: 5rem 0;
 
         font-size: 7rem;
