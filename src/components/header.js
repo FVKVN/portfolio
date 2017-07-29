@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink, Link } from 'react-router-dom';
 import Logo from './svg/logo.js';
 
 class Header extends Component {
@@ -10,9 +10,9 @@ class Header extends Component {
                     <Logo />
                 </Link>
                 <nav className="main-nav">
-                    <Link className="main-nav__link" to='/about'>About</Link>
-                    <Link className="main-nav__link" to='/work'>Work</Link>
-                    <Link className="main-nav__link" to='/contact'>Contact</Link>
+                    <NavLink className="main-nav__link" to='/about' activeClassName="main-nav__link--active">About</NavLink>
+                    <NavLink className="main-nav__link" to='/work' activeClassName="main-nav__link--active">Work</NavLink>
+                    <NavLink className="main-nav__link" to='/contact' activeClassName="main-nav__link--active">Contact</NavLink>
                 </nav>
             </header>
         )
