@@ -1,9 +1,11 @@
-const path = require('path');
+const {path} = require('path');
 const webpack = require('webpack');
+const DefinePlugin = webpack.DefinePlugin;
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = {
-    context: path.resolve(__dirname, 'src'),
+    context: resolve(__dirname, 'src'),
     entry: [
         './index.js'
         // the entry point of our app
@@ -13,7 +15,7 @@ module.exports = {
         filename: 'fvkvn.bundle.js',
         publicPath: '/dist/'
     },
-    devtool: 'source-map',
+    devtool: false,
     module: {
         rules: [
             {
@@ -23,7 +25,7 @@ module.exports = {
             },
             {
                 test: /\.scss$/,
-                use: ['css-hot-loader'].concat(ExtractTextPlugin.extract({
+                use: ExtractTextPlugin.extract({
                         use: [
                             {
                                 loader: "css-loader" // translates CSS into CommonJS
@@ -32,9 +34,10 @@ module.exports = {
                                 loader: "sass-loader" // compiles Sass to CSS
                             }
                         ],
-                        fallback: "style-loader" // used when css not extracted
+                        // use style-loader in development
+                        fallback: "style-loader"
                     }
-                ))
+                )
             },
             {
                 test: /\.woff($|\?)|\.woff2($|\?)|\.ttf($|\?)|\.eot($|\?)|\.svg($|\?)/,
@@ -43,9 +46,14 @@ module.exports = {
         ]
     },
     plugins: [
-        new webpack.NamedModulesPlugin(),
-        // prints more readable module names in the browser console on HMR updates
-
+        new DefinePlugin({
+            'process.env': {
+                NODE_ENV: JSON.stringify('production')
+            }
+        }),
+        new UglifyJsPlugin({
+            sourceMap: false
+        }),
         new ExtractTextPlugin({filename: 'styles.css', allChunks: true})
     ],
 };

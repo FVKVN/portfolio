@@ -1,33 +1,36 @@
 {
-  "name": "fvkvn",
+  "name": "react-webpack-babel-kit-2",
   "version": "1.0.0",
-  "description": "Portfolio of Kevin Five",
-  "main": "index.js",
+  "description": "React Webpack 2.0 babel kit with bootstrap framework",
+  "main": "index.html",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "webpack-dev-server --progress --colors --hot --inline",
+    "build": "webpack -p --config ./webpack.prod.config.js --progress --colors"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/FVKVN/portfolio.git"
-  },
-  "keywords": [
-    "portfolio",
-    "webdesign",
-    "web",
-    "development",
-    "personal",
-    "project"
-  ],
-  "author": "Kevin Five",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/FVKVN/portfolio/issues"
-  },
-  "homepage": "https://github.com/FVKVN/portfolio#readme",
+  "author": "srinivasan",
+  "license": "MIT",
   "devDependencies": {
-    "react": "^15.6.1",
-    "react-dom": "^15.6.1",
-    "webpack": "^3.5.4",
-    "webpack-dev-server": "^2.7.1"
+    "babel-core": "6.24.1",
+    "babel-loader": "7.0.0",
+    "babel-preset-es2015": "6.24.1",
+    "babel-preset-react": "6.24.1",
+    "bootstrap-sass": "3.3.7",
+    "css-hot-loader": "1.1.1",
+    "css-loader": "0.28.4",
+    "extract-text-webpack-plugin": "2.1.0",
+    "file-loader": "0.11.2",
+    "node-sass": "4.5.3",
+    "react": "15.5.4",
+    "react-dom": "15.5.4",
+    "react-hot-loader": "3.0.0-beta.7",
+    "sass-loader": "^6.0.6",
+    "style-loader": "^0.18.2",
+    "uglifyjs-webpack-plugin": "^0.4.6",
+    "url-loader": "0.5.8",
+    "webpack": "2.6.1",
+    "webpack-dev-server": "2.4.5"
+  },
+  "dependencies": {
+    "react-router-dom": "^4.1.2"
   }
 }
