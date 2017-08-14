@@ -22,7 +22,7 @@
     "node-sass": "4.5.3",
     "react": "15.5.4",
     "react-dom": "15.5.4",
-    "react-hot-loader": "3.0.0-beta.7",
+    "react-hot-loader": "^3.0.0-beta.7",
     "sass-loader": "^6.0.6",
     "style-loader": "^0.18.2",
     "uglifyjs-webpack-plugin": "^0.4.6",
@@ -31,6 +31,7 @@
     "webpack-dev-server": "2.4.5"
   },
   "dependencies": {
+    "gsap": "^1.20.2",
     "react-router-dom": "^4.1.2"
   }
 }

@@ -1,17 +1,14 @@
-const path = require('path');
+const {resolve} = require('path');
 const webpack = require('webpack');
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = {
-    context: path.resolve(__dirname, 'src'),
+    context: resolve(__dirname, 'src'),
     entry: [
         './index.js'
         // the entry point of our app
     ],
     output: {
-        path: path.resolve(__dirname, 'dist'),
         filename: 'fvkvn.bundle.js',
-        publicPath: '/dist/'
     },
     devtool: 'source-map',
     module: {
@@ -23,18 +20,7 @@ module.exports = {
             },
             {
                 test: /\.scss$/,
-                use: ['css-hot-loader'].concat(ExtractTextPlugin.extract({
-                        use: [
-                            {
-                                loader: "css-loader" // translates CSS into CommonJS
-                            },
-                            {
-                                loader: "sass-loader" // compiles Sass to CSS
-                            }
-                        ],
-                        fallback: "style-loader" // used when css not extracted
-                    }
-                ))
+                loaders: ['style-loader', 'css-loader', 'sass-loader']
             },
             {
                 test: /\.woff($|\?)|\.woff2($|\?)|\.ttf($|\?)|\.eot($|\?)|\.svg($|\?)/,
@@ -46,6 +32,5 @@ module.exports = {
         new webpack.NamedModulesPlugin(),
         // prints more readable module names in the browser console on HMR updates
 
-        new ExtractTextPlugin({filename: 'styles.css', allChunks: true})
     ],
 };

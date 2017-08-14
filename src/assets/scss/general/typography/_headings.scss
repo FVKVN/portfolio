@@ -1,0 +1,98 @@
+/* ==========================================================================
+   Headings
+   ========================================================================== */
+
+/* Shared
+   ========================================================================== */
+h1, h2, h3, h4, h5, h6 {
+    margin: 2rem 0;
+
+
+    font-family: $font-family--headings;
+    line-height: 1;
+
+    + p {
+        margin-top: 0;
+    }
+}
+
+
+/* Specific
+   ========================================================================== */
+h1 {
+    margin: 3rem 0;
+
+    font-size: 5rem;
+    text-transform: uppercase;
+    font-weight: 700;
+    color: $theme-primary;
+
+
+    @media(min-width: $screen-md) {
+        margin: 7rem 0;
+
+        font-size: 10rem;
+    }
+}
+
+h2 {
+    margin: 3rem 0;
+
+    font-size: 4rem;
+    color: $theme-primary;
+
+    @media(min-width: $screen-md) {
+        margin: 5rem 0;
+
+        font-size: 7rem;
+    }
+}
+
+h3 {
+    margin: 3rem 0;
+
+    font-size: 3.5rem;
+    font-weight: 400;
+    color: $theme-primary--darker;
+
+    @media(min-width: $screen-md) {
+        margin: 5rem 0;
+
+        font-size: 4rem;
+    }
+}
+
+h4 {
+    font-size: 3rem;
+    color: $black;
+}
+
+h5 {
+    font-size: 2.5rem;
+    font-weight: 300;
+}
+
+h6 {
+    font-size: 2.5rem;
+    font-weight: 300;
+}
+
+//.section-title {
+//    margin-top: 0;
+//
+//    @media(min-width: $screen-md) {
+//        font-size: 10rem;
+//    }
+//}
+
+//.page-subtitle {
+//    margin-top: 0;
+//
+//    @media(min-width: $screen-md) {
+//        font-size: 7rem;
+//    }
+//}
+//
+//.page-title + .page-subtitle {
+//    margin-top: 1rem;
+//}

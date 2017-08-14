@@ -1,0 +1,38 @@
+/* ==========================================================================
+   Main nav
+   ========================================================================== */
+
+.main-nav {
+    float: right;
+
+    display: block;
+    height: 5rem;
+}
+
+.main-nav__link {
+    padding: 1.5rem 0;
+
+    text-decoration: none;
+    color: $theme-primary;
+    font-size: 1.8rem;
+    line-height: 1;
+    text-align: left;
+    text-transform: uppercase;
+    font-family: $primary-font--bold;
+
+    & + .main-nav__link {
+        margin-left: 15px;
+    }
+
+    &.main-nav__link--active {
+        &:after {
+            width: 100%;
+        }
+    }
+
+    &.link--disabled {
+        color: rgba($theme-primary, .3);
+    }
+
+
+}

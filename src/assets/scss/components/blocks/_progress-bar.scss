@@ -1,0 +1,25 @@
+/* ==========================================================================
+   progress bar
+   ========================================================================== */
+
+.progress-bar__wrapper {
+    position: relative;
+
+    display: block;
+    width: 100%;
+    height: .5rem;
+
+    background: $grey--lightest;
+}
+
+.progress-bar {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    height: .5rem;
+
+    transition: all .3s ease-in-out;
+
+    background: $theme-secondary;
+}

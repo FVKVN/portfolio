@@ -1,0 +1,63 @@
+/* ==========================================================================
+   Colors
+
+   This file is exclusively intended for setting up variables
+   Never add styles directly to this file
+   ========================================================================== */
+
+/* Colors
+   ========================================================================== */
+
+// generic
+
+$black:                 #000000;
+$white:                 #fff;
+
+$grey--darkest:         #0c0c0c;
+$grey--dark:            #383838;
+$grey--darker:          #4a4a4a;
+$grey:                  #777777;
+$grey--lighter:         #BFBFBF;
+$grey--light:           #EDEDED;
+$grey--lightest:        #EEEEEE;
+
+$teal--light:           #a2ffe8;
+$teal--lighter:         #48fbcf;
+$teal:                  #01ffc1;
+$teal--darker:          #5ad7c7;
+$teal--dark:            #2d888a;
+
+$orange:                #F54540;
+
+$pink:                  #F32F64;
+
+$red:                   #ff003b;
+
+$purple--light:         #586a92;
+$purple--lighter:       #5c4381;
+$purple:                #662d91;
+$purple--darker:        #573471;
+$purple--dark:          #34174a;
+
+$yellow:                #ffc000;
+$yellow--lightest:      #f1ff00;
+
+$theme-primary--light:   $teal--light;
+$theme-primary--lighter: $teal--lighter;
+$theme-primary:          $teal;
+$theme-primary--darker:  $teal--darker;
+$theme-primary--dark:    $teal--dark;
+
+$theme-secondary--light:   $purple--light;
+$theme-secondary--lighter: $purple--lighter;
+$theme-secondary:          $purple;
+$theme-secondary--darker:  $purple--darker;
+$theme-secondary--dark:    $purple--dark;
+
+
+// specifics
+
+$text-color:            $white;
+$header-color:          $yellow;
+
+$text-color:            $black;
