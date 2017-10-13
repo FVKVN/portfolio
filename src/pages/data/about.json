@@ -1,4 +1,17 @@
 {
-  "title": "about page!!!",
-  "text": "yes this is the about page"
+  "title": "About",
+  "intro": "Hi I'm Kevin and I am a front-end developer and graphic designer based in the lovely city of Ghent in Belgium. By day I work as a web developer at Kunstmaan, by night I'm Batman available for freelance work. So if you have a project that you want to get started or just want to say hi, feel free to contact me.",
+  "services": {
+    "title": "Services",
+    "list": [
+      {
+        "title": "Graphic/digital design",
+        "text": "I am a trained designer, I studied graphic and advertising design at Sint Lukas Brussels from which I graduated with a Master's degree in 2011. My experience spans over different media (from print to digital media), so I'll be happy to take a look at your logo, poster, website, birthcard, flyer,e-mail, [insert anything relevant that isn't mentioned already here]."
+      },
+      {
+        "text": "My main aim is to deliver fast, responsive websites with the user's experience as the main focal point. Besides this I have a strong interest in web animation and believe that small, on- point interactions have a greater influence on the users overall perception of a website rather than one big eye-catcher. I believe that the best animations are subtle and hardly noticeable, they also should work towards the goal of the website or app.",
+        "title": "Front-end development"
+      }
+    ]
+  }
 }
