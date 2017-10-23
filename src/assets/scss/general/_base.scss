@@ -28,38 +28,42 @@ body {
 
     overflow: hidden;
 
-    background: $white;
+    background: $theme-primary-back;
 }
 
 .overflow {
     overflow: hidden !important;
 }
 
-.main-content {
-    background: $white;
+.App {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 
-    padding: 0;
+    .main-header,
+    .page,
+    .main-footer {
+        width: 100%;
+    }
 
-    @media (min-width: $screen-md) {
-        padding: 0;
+    .main-header,
+    .main-footer {
+        flex: 0 0 auto;
+    }
+
+    .page {
+        flex: 1 1 auto;
+    }
+
+    .main-header {
+
+    }
+
+    .main-footer {
+        align-self: flex-end;
     }
 }
 
-.homepage {
-    .main-content {
-        @media (min-width: $screen-sm) {
-            position: relative;
-            z-index: 1;
-
-            margin-top: 50vh;
-        }
-
-        @media (min-width: $screen-md) {
-            padding: 0;
-            margin-top: 100vh;
-        }
-    }
-}
 
 
 /* Figures
@@ -71,5 +75,5 @@ figure {
 
 .container {
     width: 100% !important;
-    max-width: 120rem !important;
+    max-width: 1200px !important;
 }

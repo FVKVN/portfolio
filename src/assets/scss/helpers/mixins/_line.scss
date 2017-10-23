@@ -5,7 +5,7 @@
 
 @mixin line($background, $height) {
     display: block;
-    width: 3rem;
+    width: 30px;
     height: $height;
 
     background: $background;

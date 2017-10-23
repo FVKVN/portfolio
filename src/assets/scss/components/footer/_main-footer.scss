@@ -1,31 +1,12 @@
-/* ==========================================================================
-   Main Footer
-   ========================================================================== */
-
 .main-footer {
-    position: relative;
-    z-index: 1;
+    padding: 20px;
 
-    padding: 2rem;
-
-    // @include gradient--diagonal(rgba($theme-primary, 1), rgba($theme-secondary, 1));
-    background: $theme-primary--darker;
-
+    background: $theme-secondary-back;
 
     p {
-        margin: 0;
-
-        font-size: 1.3rem;
-        line-height: 1;
-        color: $theme-secondary--lighter;
+        color: $theme-secondary-front;
+        font: {
+            size: 13px;
+        }
     }
-
-}
-
-.main-footer__link {
-    display: inline-block;
-    height: 3rem;
-    margin-right: 2rem;
-
-    vertical-align: middle;
 }

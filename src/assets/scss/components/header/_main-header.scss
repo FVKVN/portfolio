@@ -1,79 +1,24 @@
-/* ==========================================================================
-   Main Header
-   ========================================================================== */
-
 .main-header {
-    position: fixed;
-    top: 0;
-    z-index: z(heaven) + 1;
-
-    height: 7rem;
-    padding: 1rem 2rem;
     width: 100%;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
 
-    background: transparent;
-
-    transform: translate3d(0, -100%, 0);
-    transition: transform .3s ease-in-out, background .3s ease-in-out;
-
-}
-
-.main-header--solid {
-    background: $theme-secondary;
-}
-
-.polygon-animation-done {
-    .main-header {
-        transform: translate3d(0, 0, 0);
+    .main-nav {
+        align-self: center;
     }
 }
 
 .main-header__link {
-    display: inline-block;
-    height: 100%;
+    display: block;
 
-    &:after {
-        content: none !important;
-        display: none !important;
-    }
+    line-height: 0;
 }
 
 .site-logo {
-    height: 100%;
+    width: 60px;
 
     #logo {
-        fill: $theme-primary;
-        transition: fill .3s ease-in-out;
-
-    }
-
-    &:hover {
-        animation: booty .2s ease-in-out infinite;
-    }
-}
-
-@keyframes booty {
-    0% {
-        transform: translate3d(0, -.5rem, 0);
-    }
-
-    20% {
-        transform: translate3d(-.7rem, .3rem, 0);
-    }
-
-    40% {
-        transform: translate3d(.3rem, -.8rem, 0);
-    }
-
-    60% {
-        transform: translate3d(-.2rem, .4rem, 0);
-    }
-
-    80% {
-        transform: translate3d(.6rem, -.3rem, 0);
-    }
-
-    100% {
-        transform: translate3d(0, 0, 0);
+        fill: $theme-primary-front;
     }
 }

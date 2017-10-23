@@ -1,38 +1,54 @@
-/* ==========================================================================
-   Main nav
-   ========================================================================== */
-
 .main-nav {
-    float: right;
 
-    display: block;
-    height: 5rem;
 }
 
 .main-nav__link {
-    padding: 1.5rem 0;
+    position: relative;
 
+    display: inline-block;
+    padding: 10px;
+
+    color: $theme-primary-front;
     text-decoration: none;
-    color: $theme-primary;
-    font-size: 1.8rem;
     line-height: 1;
-    text-align: left;
-    text-transform: uppercase;
-    font-family: $primary-font--bold;
-
-    & + .main-nav__link {
-        margin-left: 15px;
+    font: {
+        size: 16px;
+        family: $primary-font--bold;
     }
 
-    &.main-nav__link--active {
-        &:after {
-            width: 100%;
+    &:after {
+        content: '';
+
+        position: absolute;
+        top: 0;
+        left: 0;
+
+        height: 100%;
+        width: 100%;
+
+        border: 1px solid $theme-primary-front;
+
+        transform: scale3d(1.3, 1.3, 1);
+        opacity: 0;
+
+        transition: all .3s ease-in-out;
+    }
+
+    &:hover {
+        @media(min-width: $screen-sm) {
+            &:after {
+                transform: scale(1,1);
+
+                opacity: 1;
+            }
         }
     }
 
-    &.link--disabled {
-        color: rgba($theme-primary, .3);
+    &.active {
+        &:after {
+            transform: scale(1,1);
+
+            opacity: 1;
+        }
     }
-
-
 }
