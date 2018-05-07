@@ -1,0 +1,84 @@
+.mosc {
+    padding: 30px 30px 50px 30px;
+
+    background: #e34740;
+
+    img {
+        position: absolute;
+        right: 10px;
+        top: 10px;
+        z-index: 0;
+
+        width: 60%;
+        height: auto;
+        display: block;
+    }
+
+}
+
+.mosc_c {
+    position: relative;
+    z-index: 10;
+
+    max-width: 640px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.mosc_header {
+    position: relative;
+    z-index: 10;
+
+    margin: 0 0 30px 0;
+
+    color: #f3eee5;
+    font-size: 40px;
+}
+
+.mosc_links {
+    transform: skewY(-10deg);
+
+    p {
+        margin: 0 0 20px 0;
+
+        color: $white;
+    }
+
+    a {
+        position: relative;
+
+        display: block;
+        padding: 10px 50px 10px 10px;
+
+        color: #e34740;
+        font-size: 20px;
+        text-transform: uppercase;
+
+        &:nth-child(even) {
+            background: #f3eee5;
+        }
+
+        &:nth-child(odd) {
+            background: #ebddb6;
+        }
+
+        &:after {
+            content: none;
+            display: none;
+        }
+
+        &:before {
+            content: '>';
+
+            display: block;
+            position: absolute;
+            top: 50%;
+            right: 10px;
+
+            font-size: 14px;
+
+            transform: translateY(-50%);
+
+        }
+    }
+}
