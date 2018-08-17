@@ -263,7 +263,7 @@ gulp.task('deploy', function() {
         recursive: true,
         clean: true,
         exclude: [],
-        hostname: 'www.fvkvn.be',
+        hostname: 'www.fvkvn.be:36335',
         username: 'deploy',
         destination: '/www/fvkvn.be/current/'
     };
